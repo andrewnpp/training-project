@@ -1,4 +1,4 @@
-# training-project2
+# training-project
 
 ## Project setup
 ```
@@ -7,12 +7,7 @@ yarn install
 
 ### Compiles and hot-reloads for development
 ```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
+yarn dev
 ```
 
 ### Lints and fixes files
@@ -20,5 +15,7 @@ yarn build
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Run storybook
+```
+yarn storybook
+```

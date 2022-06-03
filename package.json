@@ -1,11 +1,11 @@
 {
-  "name": "training-project2",
+  "name": "training-project",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "eslint --fix src/**/*.ts",
+    "dev": "webpack serve --config webpack.config.dev.js",
+    "storybook": "start-storybook -s ../../.. -p 6006 --debug-webpack"
   },
   "dependencies": {
     "vue": "^2.6.11",
@@ -14,21 +14,37 @@
     "vuex": "^3.4.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@storybook/addon-actions": "^5.3.13",
+    "@storybook/addon-knobs": "^5.3.13",
+    "@storybook/addon-links": "^5.3.13",
+    "@storybook/addons": "^5.3.13",
+    "@storybook/cli": "^5.3.13",
+    "@storybook/vue": "^5.3.13",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-typescript": "~4.5.0",
-    "@vue/cli-plugin-vuex": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/eslint-config-prettier": "^6.0.0",
-    "@vue/eslint-config-typescript": "^7.0.0",
+    "@webpack-cli/serve": "0.1.8",
+    "babel-loader": "^8.2.5",
+    "babel-preset-vue": "^2.0.2",
+    "command-line-args": "^5.2.1",
+    "copy-webpack-plugin": "^5.1.2",
+    "css-loader": "^5.2.7",
     "eslint": "^6.7.2",
+    "eslint-plugin-jsdoc": "^39.3.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^6.2.2",
+    "html-webpack-plugin": "^4.5.2",
     "node-sass": "^4.12.0",
     "prettier": "^2.2.1",
+    "raw-loader": "^4.0.2",
     "sass-loader": "^8.0.2",
+    "style-loader": "^1.3.0",
+    "ts-loader": "^8.4.0",
     "typescript": "~4.1.5",
-    "vue-template-compiler": "^2.6.11"
+    "vue-loader": "^15.9.7",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "3.11.3"
   }
 }
