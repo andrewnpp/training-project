@@ -1,0 +1,11 @@
+<div class="employee-list__container">
+    <ul>
+        <EmployeeListItem
+            class="list-item"
+            v-for="employee in employees"
+            :key="employee.id"
+            :employee="employee"
+            :deleteEmployee="deleteEmployee"
+        />
+    </ul>
+</div>

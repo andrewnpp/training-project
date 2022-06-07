@@ -1,0 +1,15 @@
+<div class="employee-filter__container">
+    <div class="filter-input">
+        <input type="text" id="employeeFilter" placeholder="Фильтр" v-model="inputText">
+        <button @click="clearFilterInput">&times;</button>
+    </div>
+    <div class="filter-option">
+        <input
+            type="checkbox"
+            id="onlyManagers"
+            v-model="managersChecked"
+            @change="onCheckboxChange"
+        >
+        <span>только руководители</span>
+    </div>
+</div>

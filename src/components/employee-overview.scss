@@ -1,0 +1,12 @@
+.employee-overview__container {
+    display: flex;
+    gap: 7px;
+}
+
+.filter {
+    flex-basis: 33%;
+}
+
+.list {
+    flex-basis: 67%;
+}

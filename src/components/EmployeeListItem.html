@@ -1,0 +1,7 @@
+<div class="employee-list-item__container">
+    <div class="employee-info__container">
+        <span class="employee-full-name">{{ employee.fullName }}</span>
+        <span class="employee-position">{{ employee.position }}</span>
+    </div>
+    <span class="delete-text-button" @click="deleteEmployee(employee.id)">Удалить</span>
+</div>

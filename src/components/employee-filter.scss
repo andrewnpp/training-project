@@ -1,0 +1,15 @@
+.employee-filter__container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid lightgray;
+    padding: 7px;
+}
+
+.filter-option {
+    align-self: flex-start;
+}
+
+#onlyManagers {
+    margin: 0;
+}

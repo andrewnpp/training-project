@@ -1,0 +1,15 @@
+.employee-list__container {
+    border: 1px solid lightgray;
+    padding: 7px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.list-item:not(:first-child) {
+    margin-top: 7px;
+}
