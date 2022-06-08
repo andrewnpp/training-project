@@ -12,10 +12,15 @@ import { Employee } from "./Interfaces";
     components: { EmployeeFilter, EmployeeList }
 })
 export class EmployeeOverview extends Vue {
-    // @Prop()
-    // private employees: string;
     @Prop()
     private employees: Employee[];
     @Prop()
     private deleteEmployee: void;
+
+    public onInputTextChange(text: string): void {
+        this.$emit("input-text-change", text);
+    }
+    public onCheckboxChange(bool: boolean): void {
+        this.$emit("checkbox-change", bool);
+    }
 }

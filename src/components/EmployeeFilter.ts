@@ -8,15 +8,17 @@ import "./employee-filter.scss";
     template: require("./EmployeeFilter.html")
 })
 export class EmployeeFilter extends Vue {
-    public inputText: string = "";
-
+    public inputTextModel: string = "";
     public managersChecked: boolean = false;
 
     public clearFilterInput(): void {
-        this.inputText = "";
+        this.inputTextModel = "";
+        this.onInputTextChange("");
     }
-
-    public onCheckboxChange(): void {
-        
+    public onInputTextChange(text: string): void {
+        this.$emit("input-text-change", text);
+    }
+    public onCheckboxChange(bool: boolean): void {
+        this.$emit("checkbox-change", bool);
     }
  }

@@ -1,5 +1,9 @@
 <div class="employee-overview__container">
-    <EmployeeFilter class="filter"/>
+    <EmployeeFilter
+        class="filter"
+        @input-text-change="onInputTextChange"
+        @checkbox-change="onCheckboxChange"
+    />
     <EmployeeList
         class="list"
         :employees="employees"

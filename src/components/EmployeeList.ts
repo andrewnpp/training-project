@@ -11,8 +11,6 @@ import { Employee } from "./Interfaces";
     components: { EmployeeListItem }
 })
 export class EmployeeList extends Vue {
-    // @Prop()
-    // private employees: string[];
     @Prop()
     private employees: Employee[];
     @Prop()

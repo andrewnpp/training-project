@@ -1,7 +1,13 @@
 <div class="employee-list-item__container">
-    <div class="employee-info__container">
-        <span class="employee-full-name">{{ employee.fullName }}</span>
-        <span class="employee-position">{{ employee.position }}</span>
+    <div class="employee-profile__container">
+        <div class="avatar"></div>
+        <div class="employee-info__container">
+            <span class="employee-full-name">{{ employee.fullName }}</span>
+            <span class="employee-position">{{ employee.position }}</span>
+        </div>
     </div>
-    <span class="delete-text-button" @click="deleteEmployee(employee.id)">Удалить</span>
+    <div class="text-buttons__container">
+        <span class="text-button">Редактировать</span>
+        <span class="text-button" @click="deleteEmployee(employee.id)">Удалить</span>
+    </div>
 </div>

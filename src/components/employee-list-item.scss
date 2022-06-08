@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     border: 1px solid lightgray;
-    padding: 10px;
+    padding: 7px;
 }
 
 .employee-info__container {
@@ -19,8 +19,25 @@
     margin-top: 5px;
 }
 
-.delete-text-button {
+.text-button {
     font-size: smaller;
     color: #2177B7;
     cursor: pointer;
+    align-self: flex-end;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border: 1px solid lightgray;
+}
+
+.employee-profile__container {
+    display: flex;
+    gap: 10px;
+}
+
+.text-buttons__container {
+    display: flex;
+    gap: 5px;
 }
