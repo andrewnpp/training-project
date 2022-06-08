@@ -1,11 +1,9 @@
-<div class="employee-list__container">
-    <ul>
-        <EmployeeListItem
-            class="list-item"
-            v-for="employee in employees"
-            :key="employee.id"
-            :employee="employee"
-            :deleteEmployee="deleteEmployee"
-        />
-    </ul>
-</div>
+<ul class="employee-list__container">
+    <EmployeeListItem
+        class="employee-list__list-item"
+        v-for="employee in employees"
+        :key="employee.id"
+        :employee="employee"
+        :onDeleteEmployee="onDeleteEmployee"
+    />
+</ul>

@@ -1,13 +1,13 @@
-<div class="employee-list-item__container">
-    <div class="employee-profile__container">
-        <div class="avatar"></div>
-        <div class="employee-info__container">
-            <span class="employee-full-name">{{ employee.fullName }}</span>
-            <span class="employee-position">{{ employee.position }} <span v-if="employee.isManager">(Р)</span></span>
+<li class="employee-list-item__container">
+    <div class="employee-list-item__employee-profile">
+        <div class="employee-list-item__avatar"></div>
+        <div class="employee-list-item__employee-info">
+            <span class="employee-list-item__employee-full-name">{{ employee.fullName }}</span>
+            <span class="employee-list-item__employee-position">{{ employee.position }}<span v-if="employee.isManager"> (Р)</span></span>
         </div>
     </div>
-    <div class="text-buttons__container">
-        <span class="text-button">Редактировать</span>
-        <span class="text-button" @click="deleteEmployee(employee.id)">Удалить</span>
+    <div class="employee-list-item__text-buttons">
+        <span class="employee-list-item__text-button">Редактировать</span>
+        <span class="employee-list-item__text-button" @click="onDeleteEmployee(employee.id)">Удалить</span>
     </div>
-</div>
+</li>

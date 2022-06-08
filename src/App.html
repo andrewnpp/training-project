@@ -1,8 +1,10 @@
 <div id="app">
     <EmployeeOverview
         :employees="filteredEmployees"
-        :deleteEmployee="deleteEmployee"
-        @input-text-change="changeInputText"
-        @checkbox-change="onCheckboxChange"
+        :inputText="inputText"
+        :onChangeInputText="onChangeInputText"
+        :onlyManagers="onlyManagers"
+        :onChangeCheckbox="onChangeCheckbox"
+        :onDeleteEmployee="onDeleteEmployee"
     />
 </div>

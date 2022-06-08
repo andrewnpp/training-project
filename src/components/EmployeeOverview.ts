@@ -13,14 +13,15 @@ import { Employee } from "./Interfaces";
 })
 export class EmployeeOverview extends Vue {
     @Prop()
-    private employees: Employee[];
+    public inputText: string;
     @Prop()
-    private deleteEmployee: void;
-
-    public onInputTextChange(text: string): void {
-        this.$emit("input-text-change", text);
-    }
-    public onCheckboxChange(bool: boolean): void {
-        this.$emit("checkbox-change", bool);
-    }
+    public onChangeInputText: (text: string) => void;
+    @Prop()
+    public onlyManagers: boolean;
+    @Prop()
+    public onChangeCheckbox: (value: boolean) => void;
+    @Prop()
+    public employees: Employee[];
+    @Prop()
+    public onDeleteEmployee: void;
 }

@@ -10,7 +10,7 @@ import { Employee } from "./Interfaces";
 })
 export class EmployeeListItem extends Vue {
     @Prop()
-    private employee: Employee;
+    public employee: Employee;
     @Prop()
-    private deleteEmployee: void;
+    public onDeleteEmployee: void;
 }

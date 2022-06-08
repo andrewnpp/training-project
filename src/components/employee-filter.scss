@@ -6,16 +6,16 @@
     padding: 7px;
 }
 
-.filter-input {
+.employee-filter__filter-input {
     display: flex;
     gap: 2px;
 }
 
-.filter-option {
+.employee-filter__filter-option {
     align-self: flex-start;
 }
 
-#onlyManagers {
+#managersCheckbox {
     margin: 0;
 }
 

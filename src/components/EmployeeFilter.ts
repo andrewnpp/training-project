@@ -8,17 +8,24 @@ import "./employee-filter.scss";
     template: require("./EmployeeFilter.html")
 })
 export class EmployeeFilter extends Vue {
-    public inputTextModel: string = "";
-    public managersChecked: boolean = false;
+    @Prop()
+    public inputText: string;
+    @Prop()
+    public onChangeInputText: (text: string) => void;
+    @Prop()
+    public onlyManagers: boolean;
+    @Prop()
+    public onChangeCheckbox: (value: boolean) => void;
+
+    public textInputHandler(event: Event): void {
+        this.onChangeInputText((<HTMLInputElement>event.target).value);
+    }
 
     public clearFilterInput(): void {
-        this.inputTextModel = "";
-        this.onInputTextChange("");
+        this.onChangeInputText("");
     }
-    public onInputTextChange(text: string): void {
-        this.$emit("input-text-change", text);
-    }
-    public onCheckboxChange(bool: boolean): void {
-        this.$emit("checkbox-change", bool);
+
+    public checkboxChangeHandler(event: Event): void {
+        this.onChangeCheckbox((<HTMLInputElement>event.target).checked);
     }
 }

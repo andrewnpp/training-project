@@ -1,20 +1,20 @@
 <div class="employee-filter__container">
-    <div class="filter-input">
+    <div class="employee-filter__filter-input">
         <input
             type="text"
             id="employeeFilter"
             placeholder="Фильтр"
-            v-model="inputTextModel"
-            @input="onInputTextChange(inputTextModel)"
+            :value="inputText"
+            @input="textInputHandler"
         >
         <button @click="clearFilterInput">&times;</button>
     </div>
-    <div class="filter-option">
+    <div class="employee-filter__filter-option">
         <input
             type="checkbox"
-            id="onlyManagers"
-            v-model="managersChecked"
-            @change="onCheckboxChange(managersChecked)"
+            id="managersCheckbox"
+            :checked="onlyManagers"
+            @change="checkboxChangeHandler"
         >
         <span>только руководители</span>
     </div>
