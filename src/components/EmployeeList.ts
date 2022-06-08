@@ -15,5 +15,4 @@ export class EmployeeList extends Vue {
     private employees: Employee[];
     @Prop()
     private deleteEmployee: void;
-    
 }

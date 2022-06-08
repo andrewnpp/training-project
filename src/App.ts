@@ -27,7 +27,7 @@ export class App extends Vue {
             position: "Стажер",
             isManager: false,
             id: 3
-        },
+        }
     ];
     public inputText: string = "";
     public onlyManagers: boolean = false;
@@ -51,6 +51,6 @@ export class App extends Vue {
         this.onlyManagers = bool;
     }
     public deleteEmployee(deleteId: number): void {
-        this.employees = this.employees.filter(({id}) => id !== deleteId);
+        this.employees = this.employees.filter(({ id }) => id !== deleteId);
     }
 }

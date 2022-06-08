@@ -21,4 +21,4 @@ export class EmployeeFilter extends Vue {
     public onCheckboxChange(bool: boolean): void {
         this.$emit("checkbox-change", bool);
     }
- }
+}

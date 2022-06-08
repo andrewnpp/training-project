@@ -1,6 +1,6 @@
 export interface Employee {
-    fullName: string,
-    position: string,
-    isManager: boolean,
-    id: number
+    fullName: string;
+    position: string;
+    isManager: boolean;
+    id: number;
 }
