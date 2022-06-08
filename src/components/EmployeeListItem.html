@@ -3,7 +3,7 @@
         <div class="avatar"></div>
         <div class="employee-info__container">
             <span class="employee-full-name">{{ employee.fullName }}</span>
-            <span class="employee-position">{{ employee.position }}</span>
+            <span class="employee-position">{{ employee.position }} <span v-if="employee.isManager">(Р)</span></span>
         </div>
     </div>
     <div class="text-buttons__container">
