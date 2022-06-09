@@ -1,0 +1,53 @@
+<div
+    class="employee-editor__container"
+    v-if="isEditing"
+    @click.self="onCancellEditing"
+>
+    <div class="employee-editor__content">
+        <div class="employee-editor__header">
+            <span class="employee-editor__title-text">Редактирование сотрудника</span>
+            <button
+                class="employee-editor__close-button"
+                @click="onCancellEditing"
+            >&times;</button>
+        </div>
+        <div class="employee-editor__full-name-container">
+            <span class="employee-editor__full-name-text">ФИО:</span>
+            <input
+                class="employee-editor__full-name-input"
+                type="text"
+                :value="editorFullName"
+                @input="onChangeEditorFullNameHandler"
+            >
+        </div>
+        <div class="employee-editor__position-container">
+            <span class="employee-editor__position-text">Должность:</span>
+            <input
+                class="employee-editor__position-input"
+                type="text"
+                :value="editorPosition"
+                @input="onChangeEditorPositionHandler"
+            >
+        </div>
+        <div class="employee-editor__manager-container">
+            <input
+                class="employee-editor__manager-checkbox"
+                type="checkbox"
+                :checked="editorIsManager"
+                @change="onChangeEditorIsManagerHandler"
+            >
+            <span class="employee-editor__manager-text">руководитель</span>
+        </div>
+        <div class="employee-editor__buttons-container">
+            <button
+                class="employee-editor__save-button"
+                :disabled="saveButtonDisabled"
+                @click="onSaveEditing"
+            >Сохранить</button>
+            <button
+                class="employee-editor__cancell-button"
+                @click="onCancellEditing"
+            >Отмена</button>
+        </div>
+    </div>
+</div>

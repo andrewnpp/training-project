@@ -20,6 +20,14 @@ export class EmployeeListItem extends Vue {
         this.appModule.removeEmployee(deleteId);
     }
 
+    public onClickEditButton(employee: IEmployee): void {
+        this.appModule.setIsEditing(true);
+        this.appModule.setEmployeeBeingEdited(employee);
+        this.appModule.setEditorFullName(employee.fullName);
+        this.appModule.setEditorPosition(employee.position);
+        this.appModule.setEditorIsManager(employee.isManager);
+    }
+
     created() {
         this.appModule = getModule(AppModule, this.$store);
     }

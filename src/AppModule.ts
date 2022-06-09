@@ -7,6 +7,11 @@ export class AppModule extends VuexModule<AppModule> {
     public employees: IEmployee[] = [];
     public inputText: string = "";
     public onlyManagers: boolean = false;
+    public isEditing: boolean = false;
+    public editorFullName: string = "";
+    public editorPosition: string = "";
+    public editorIsManager: boolean = false;
+    public employeeBeingEdited: IEmployee = null;
 
     @Mutation
     private commitEmployees(value: IEmployee[]): void {
@@ -26,6 +31,45 @@ export class AppModule extends VuexModule<AppModule> {
     @Mutation
     private commitRemoveEmployee(deleteId: number): void {
         this.employees = this.employees.filter(({ id }) => id !== deleteId);
+    }
+
+    @Mutation
+    private commitIsEditing(value: boolean): void {
+        this.isEditing = value;
+    }
+
+    @Mutation
+    private commitEditorFullName(value: string): void {
+        this.editorFullName = value;
+    }
+
+    @Mutation
+    private commitEditorPosition(value: string): void {
+        this.editorPosition = value;
+    }
+
+    @Mutation
+    private commitEditorIsManager(value: boolean): void {
+        this.editorIsManager = value;
+    }
+
+    @Mutation
+    private commitUpdateEmployee(value: IEmployee): void {
+        const updateIndex: number = this.employees.findIndex(item => item.id === value.id);
+        const copy = { ...value };
+        if (updateIndex !== -1) {
+            this.employees.splice(updateIndex, 1, copy);
+        }
+    }
+
+    @Mutation
+    private commitAddEmployee(value: IEmployee): void {
+        this.employees.push(value);
+    }
+
+    @Mutation
+    private commitEmployeeBeingEdited(value: IEmployee): void {
+        this.employeeBeingEdited = value;
     }
 
     @Action
@@ -48,6 +92,41 @@ export class AppModule extends VuexModule<AppModule> {
         this.commitRemoveEmployee(deleteId);
     }
 
+    @Action
+    public setIsEditing(value: boolean): void {
+        this.commitIsEditing(value);
+    }
+
+    @Action
+    public setEditorFullName(value: string): void {
+        this.commitEditorFullName(value);
+    }
+
+    @Action
+    public setEditorPosition(value: string): void {
+        this.commitEditorPosition(value);
+    }
+
+    @Action
+    public setEditorIsManager(value: boolean): void {
+        this.commitEditorIsManager(value);
+    }
+
+    @Action
+    public setEmployeeBeingEdited(value: IEmployee): void {
+        this.commitEmployeeBeingEdited(value);
+    }
+
+    @Action
+    public updateEmployee(value: IEmployee): void {
+        this.commitUpdateEmployee(value);
+    }
+
+    @Action
+    public addEmployee(value: IEmployee): void {
+        this.commitAddEmployee(value);
+    }
+
     public get getEmployees(): IEmployee[] {
         return this.employees;
     }
@@ -60,6 +139,26 @@ export class AppModule extends VuexModule<AppModule> {
         return this.onlyManagers;
     }
 
+    public get getIsEditing(): boolean {
+        return this.isEditing;
+    }
+
+    public get getEditorFullName(): string {
+        return this.editorFullName;
+    }
+
+    public get getEditorPosition(): string {
+        return this.editorPosition;
+    }
+
+    public get getEditorIsManager(): boolean {
+        return this.editorIsManager;
+    }
+
+    public get getEmployeeBeingEdited(): IEmployee {
+        return this.employeeBeingEdited;
+    }
+
     public get getFilteredEmployees(): IEmployee[] {
         return this.employees.filter(item => {
             return (
@@ -67,5 +166,9 @@ export class AppModule extends VuexModule<AppModule> {
                 (!this.inputText || item.fullName.toLowerCase().includes(this.inputText.toLowerCase()))
             );
         });
+    }
+
+    public get getSaveButtonDisabled(): boolean {
+        return !(this.editorFullName && this.editorPosition);
     }
 }

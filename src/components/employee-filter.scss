@@ -11,8 +11,27 @@
     gap: 2px;
 }
 
+.employee-filter__clear-button {
+    border: 1px solid lightgray;
+    background-color: white;
+}
+
+.employee-filter__clear-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 .employee-filter__filter-option {
     align-self: flex-start;
+}
+
+.employee-filter__add-button {
+    border: 1px solid lightgray;
+    padding: 6px;
+    background-color: white;
+}
+
+.employee-filter__add-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 #managersCheckbox {

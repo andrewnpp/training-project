@@ -7,7 +7,10 @@
             :value="inputText"
             @input="onChangeInputTextHandler"
         >
-        <button @click="onClearFilterInput">&times;</button>
+        <button
+            class="employee-filter__clear-button"
+            @click="onClearFilterInput"
+        >&times;</button>
     </div>
     <div class="employee-filter__filter-option">
         <input
@@ -18,4 +21,8 @@
         >
         <span>только руководители</span>
     </div>
+    <button
+        class="employee-filter__add-button"
+        @click="onClickAddButton"
+    >Добавить</button>
 </div>

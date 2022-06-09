@@ -31,6 +31,10 @@ export class EmployeeFilter extends Vue {
         this.appModule.setOnlyManagers((<HTMLInputElement>event.target).checked);
     }
 
+    public onClickAddButton(): void {
+        this.appModule.setIsEditing(true);
+    }
+
     created() {
         this.appModule = getModule(AppModule, this.$store);
     }
