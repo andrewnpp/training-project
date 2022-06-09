@@ -1,5 +1,5 @@
-import { Employee } from "./Interfaces";
-export const moduledEmployees: Employee[] = [
+import { IEmployee } from "./Interfaces";
+export const moduledEmployees: IEmployee[] = [
     {
         fullName: "Иван Иванович Иванов",
         position: "Инженер",

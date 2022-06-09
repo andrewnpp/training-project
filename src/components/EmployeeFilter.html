@@ -5,16 +5,16 @@
             id="employeeFilter"
             placeholder="Фильтр"
             :value="inputText"
-            @input="textInputHandler"
+            @input="onChangeInputTextHandler"
         >
-        <button @click="clearFilterInput">&times;</button>
+        <button @click="onClearFilterInput">&times;</button>
     </div>
     <div class="employee-filter__filter-option">
         <input
             type="checkbox"
             id="managersCheckbox"
             :checked="onlyManagers"
-            @change="checkboxChangeHandler"
+            @change="onChangeCheckboxHandler"
         >
         <span>только руководители</span>
     </div>

@@ -1,31 +1,37 @@
 import Vue from "vue";
 import Component from "vue-class-component";
-import { Inject, InjectReactive } from "vue-property-decorator";
+import { getModule } from "vuex-module-decorators";
 
 import "./employee-filter.scss";
+import { AppModule } from "../AppModule";
 
 @Component({
     template: require("./EmployeeFilter.html")
 })
 export class EmployeeFilter extends Vue {
-    @InjectReactive()
-    public inputText: string;
-    @Inject()
-    public onChangeInputText: (text: string) => void;
-    @InjectReactive()
-    public onlyManagers: boolean;
-    @Inject()
-    public onChangeCheckbox: (value: boolean) => void;
+    private appModule: AppModule;
 
-    public textInputHandler(event: Event): void {
-        this.onChangeInputText((<HTMLInputElement>event.target).value);
+    public get inputText(): string {
+        return this.appModule.getInputText;
     }
 
-    public clearFilterInput(): void {
-        this.onChangeInputText("");
+    public get onlyManagers(): boolean {
+        return this.appModule.getOnlyManagers;
     }
 
-    public checkboxChangeHandler(event: Event): void {
-        this.onChangeCheckbox((<HTMLInputElement>event.target).checked);
+    public onChangeInputTextHandler(event: Event): void {
+        this.appModule.setInputText((<HTMLInputElement>event.target).value);
+    }
+
+    public onClearFilterInput(): void {
+        this.appModule.setInputText("");
+    }
+
+    public onChangeCheckboxHandler(event: Event): void {
+        this.appModule.setOnlyManagers((<HTMLInputElement>event.target).checked);
+    }
+
+    created() {
+        this.appModule = getModule(AppModule, this.$store);
     }
 }

@@ -1,4 +1,4 @@
-export interface Employee {
+export interface IEmployee {
     fullName: string;
     position: string;
     isManager: boolean;
