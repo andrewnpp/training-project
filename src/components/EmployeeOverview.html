@@ -1,14 +1,4 @@
 <div class="employee-overview__container">
-    <EmployeeFilter
-        class="employee-overview__filter"
-        :inputText="inputText"
-        :onChangeInputText="onChangeInputText"
-        :onlyManagers="onlyManagers"
-        :onChangeCheckbox="onChangeCheckbox"
-    />
-    <EmployeeList
-        class="employee-overview__list"
-        :employees="employees"
-        :onDeleteEmployee="onDeleteEmployee"
-    />
+    <EmployeeFilter class="employee-overview__filter" />
+    <EmployeeList class="employee-overview__list" />
 </div>

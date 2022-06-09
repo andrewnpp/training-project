@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Component from "vue-class-component";
-import { Prop } from "vue-property-decorator";
+import { Inject, InjectReactive } from "vue-property-decorator";
 
 import "./employee-filter.scss";
 
@@ -8,13 +8,13 @@ import "./employee-filter.scss";
     template: require("./EmployeeFilter.html")
 })
 export class EmployeeFilter extends Vue {
-    @Prop()
+    @InjectReactive()
     public inputText: string;
-    @Prop()
+    @Inject()
     public onChangeInputText: (text: string) => void;
-    @Prop()
+    @InjectReactive()
     public onlyManagers: boolean;
-    @Prop()
+    @Inject()
     public onChangeCheckbox: (value: boolean) => void;
 
     public textInputHandler(event: Event): void {

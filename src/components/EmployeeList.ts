@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Component from "vue-class-component";
-import { Prop } from "vue-property-decorator";
+import { InjectReactive } from "vue-property-decorator";
 
 import { EmployeeListItem } from "./EmployeeListItem";
 import "./employee-list.scss";
@@ -11,8 +11,6 @@ import { Employee } from "./Interfaces";
     components: { EmployeeListItem }
 })
 export class EmployeeList extends Vue {
-    @Prop()
+    @InjectReactive()
     public employees: Employee[];
-    @Prop()
-    public onDeleteEmployee: void;
 }
