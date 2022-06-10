@@ -1,0 +1,74 @@
+.employee-form__container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.employee-form__full-name-container {
+    display: flex;
+    gap: 10px;
+}
+
+.employee-form__full-name-text {
+    font-size: smaller;
+    align-self: center;
+    min-width: 70px;
+}
+
+.employee-form__full-name-input {
+    flex-grow: 1;
+}
+
+.employee-form__position-container {
+    display: flex;
+    gap: 10px;
+}
+
+.employee-form__position-text {
+    font-size: smaller;
+    align-self: center;
+    min-width: 70px;
+}
+
+.employee-form__position-input {
+    flex-grow: 1;
+}
+
+.employee-form__manager-container {
+    display: flex;
+    gap: 5px;
+}
+
+.employee-form__manager-checkbox {
+    margin: 0;
+}
+
+.employee-form__manager-text {
+    font-size: smaller;
+}
+
+.employee-form__buttons-container {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.employee-form__save-button {
+    border: 1px solid lightgray;
+    padding: 6px;
+    background-color: white;
+}
+
+.employee-form__save-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.employee-form__cancell-button {
+    border: 1px solid lightgray;
+    padding: 6px;
+    background-color: white;
+}
+
+.employee-form__cancell-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}

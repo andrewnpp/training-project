@@ -1,0 +1,40 @@
+<div class="employee-form__container">
+    <div class="employee-form__full-name-container">
+        <span class="employee-form__full-name-text">ФИО:</span>
+        <input
+            class="employee-form__full-name-input"
+            type="text"
+            :value="editorFullName"
+            @input="onChangeEditorFullNameHandler"
+        >
+    </div>
+    <div class="employee-form__position-container">
+        <span class="employee-form__position-text">Должность:</span>
+        <input
+            class="employee-form__position-input"
+            type="text"
+            :value="editorPosition"
+            @input="onChangeEditorPositionHandler"
+        >
+    </div>
+    <div class="employee-form__manager-container">
+        <input
+            class="employee-form__manager-checkbox"
+            type="checkbox"
+            :checked="editorIsManager"
+            @change="onChangeEditorIsManagerHandler"
+        >
+        <span class="employee-form__manager-text">руководитель</span>
+    </div>
+    <div class="employee-form__buttons-container">
+        <button
+            class="employee-form__save-button"
+            :disabled="saveButtonDisabled"
+            @click="onSaveEditing"
+        >Сохранить</button>
+        <button
+            class="employee-form__cancell-button"
+            @click="onCancellEditing"
+        >Отмена</button>
+    </div>
+</div>

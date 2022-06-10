@@ -3,7 +3,7 @@ import { withKnobs } from "@storybook/addon-knobs";
 import { getModule } from "vuex-module-decorators";
 
 import { EmployeeOverview } from "../src/components/EmployeeOverview";
-import { EmployeeEditor } from "../src/components/EmployeeEditor";
+import { ModalEmployeeEditor } from "../src/components/ModalEmployeeEditor";
 import { AppModule } from "../src/AppModule";
 import { moduledEmployees } from "../src/components/Employees";
 
@@ -13,10 +13,10 @@ export default {
 };
 
 export const employeeOverview = () => ({
-    components: { EmployeeOverview, EmployeeEditor },
+    components: { EmployeeOverview, ModalEmployeeEditor },
     template: `
     <div>
-        <EmployeeEditor />
+        <ModalEmployeeEditor />
         <EmployeeOverview />
     </div>`,
     store: new Vuex.Store({
@@ -25,5 +25,6 @@ export const employeeOverview = () => ({
     created() {
         const module = getModule(AppModule, this.$store);
         module.setEmployees(moduledEmployees);
+        module.setIsEditing(false);
     }
 });
