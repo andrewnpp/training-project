@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "eslint --fix src/**/*.ts",
     "dev": "webpack serve --config webpack.config.dev.js",
-    "storybook": "start-storybook -s ../../.. -p 6006 --debug-webpack"
+    "storybook": "start-storybook -s ../../.. -p 6006"
   },
   "dependencies": {
     "vue": "^2.6.11",
