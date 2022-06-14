@@ -2,8 +2,8 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { getModule } from "vuex-module-decorators";
 
-import { ModalEmployeeEditor } from "./components/ModalEmployeeEditor";
-import { EmployeeOverview } from "./components/EmployeeOverview";
+import { ModalEmployeeEditor } from "./components/Employee/ModalEmployeeEditor";
+import { EmployeeOverview } from "./components/Employee/EmployeeOverview";
 import "./app.scss";
 import { moduledEmployees } from "./components/Employees";
 import { AppModule } from "./AppModule";

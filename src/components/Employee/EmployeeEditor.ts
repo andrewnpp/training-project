@@ -3,8 +3,8 @@ import Component from "vue-class-component";
 import { getModule } from "vuex-module-decorators";
 
 import "./employee-editor.scss";
-import { AppModule } from "../AppModule";
-import { IEmployee } from "./Interfaces";
+import { AppModule } from "../../AppModule";
+import { IEmployee } from "../Interfaces";
 
 @Component({
     template: require("./EmployeeEditor.html")
@@ -32,7 +32,7 @@ export class EmployeeEditor extends Vue {
         return this.appModule.getSaveButtonDisabled;
     }
 
-    public onCancellEditing(): void {
+    public onCancelEditing(): void {
         this.appModule.setIsEditing(false);
         this.appModule.setEditorFullName("");
         this.appModule.setEditorPosition("");
@@ -65,7 +65,7 @@ export class EmployeeEditor extends Vue {
         } else {
             this.appModule.addEmployee(employee);
         }
-        this.onCancellEditing();
+        this.onCancelEditing();
     }
 
     created() {

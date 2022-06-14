@@ -1,18 +1,32 @@
-import Vuex from "vuex";
+import { action } from "@storybook/addon-actions";
 import { withKnobs, object } from "@storybook/addon-knobs";
+import { Component } from "vue";
 
-import { EmployeeForm } from "../src/components/EmployeeForm";
-import { AppModule } from "../src/AppModule";
+import { EmployeeForm } from "../src/components/Employee/EmployeeForm";
+import { IEmployee } from "src/components/Interfaces";
 
 export default {
-    title: "Employees",
+    title: "Employees/Employee Form",
     decorators: [withKnobs]
 };
 
-export const employeeForm = () => ({
-    components: { EmployeeForm },
-    template: "<EmployeeForm />",
-    store: new Vuex.Store({
-        modules: { AppModule }
-    })
-});
+function getEmployeeStory(employee: IEmployee): Component {
+    return {
+        props: {
+            employee: { default: object("employee", employee) }
+        },
+        components: { EmployeeForm },
+        template: '<EmployeeForm :employee="employee" :onSaveAction="onSaveAction" :onCancelAction="onCancelAction" />',
+        methods: {
+            onSaveAction(employee: IEmployee) {
+                action("onSaveAction")(employee);
+            },
+            onCancelAction() {
+                action("onCancelAction")();
+            }
+        }
+    };
+}
+
+export const emptyEmployee = () => getEmployeeStory(null);
+export const defaultEmployee = () => getEmployeeStory({ id: Date.now(), fullName: "ФИО", position: "Должность", isManager: true });

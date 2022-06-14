@@ -4,8 +4,8 @@ import { getModule } from "vuex-module-decorators";
 
 import { EmployeeListItem } from "./EmployeeListItem";
 import "./employee-list.scss";
-import { IEmployee } from "./Interfaces";
-import { AppModule } from "../AppModule";
+import { IEmployee } from "../Interfaces";
+import { AppModule } from "../../AppModule";
 
 @Component({
     template: require("./EmployeeList.html"),

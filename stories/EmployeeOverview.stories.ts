@@ -2,8 +2,8 @@ import Vuex from "vuex";
 import { withKnobs } from "@storybook/addon-knobs";
 import { getModule } from "vuex-module-decorators";
 
-import { EmployeeOverview } from "../src/components/EmployeeOverview";
-import { ModalEmployeeEditor } from "../src/components/ModalEmployeeEditor";
+import { EmployeeOverview } from "../src/components/Employee/EmployeeOverview";
+import { ModalEmployeeEditor } from "../src/components/Employee/ModalEmployeeEditor";
 import { AppModule } from "../src/AppModule";
 import { moduledEmployees } from "../src/components/Employees";
 
@@ -16,7 +16,6 @@ export const employeeOverview = () => ({
     components: { EmployeeOverview, ModalEmployeeEditor },
     template: `
     <div>
-        <ModalEmployeeEditor />
         <EmployeeOverview />
     </div>`,
     store: new Vuex.Store({

@@ -1,14 +1,14 @@
 <div
     class="employee-editor__container"
     v-if="isEditing"
-    @click.self="onCancellEditing"
+    @click.self="onCancelEditing"
 >
     <div class="employee-editor__content">
         <div class="employee-editor__header">
             <span class="employee-editor__title-text">Редактирование сотрудника</span>
             <button
                 class="employee-editor__close-button"
-                @click="onCancellEditing"
+                @click="onCancelEditing"
             >&times;</button>
         </div>
         <div class="employee-editor__full-name-container">
@@ -45,8 +45,8 @@
                 @click="onSaveEditing"
             >Сохранить</button>
             <button
-                class="employee-editor__cancell-button"
-                @click="onCancellEditing"
+                class="employee-editor__cancel-button"
+                @click="onCancelEditing"
             >Отмена</button>
         </div>
     </div>

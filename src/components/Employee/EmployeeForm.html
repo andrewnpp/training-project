@@ -4,8 +4,7 @@
         <input
             class="employee-form__full-name-input"
             type="text"
-            :value="editorFullName"
-            @input="onChangeEditorFullNameHandler"
+            v-model="fullName"
         >
     </div>
     <div class="employee-form__position-container">
@@ -13,16 +12,14 @@
         <input
             class="employee-form__position-input"
             type="text"
-            :value="editorPosition"
-            @input="onChangeEditorPositionHandler"
+            v-model="position"
         >
     </div>
     <div class="employee-form__manager-container">
         <input
             class="employee-form__manager-checkbox"
             type="checkbox"
-            :checked="editorIsManager"
-            @change="onChangeEditorIsManagerHandler"
+            v-model="isManager"
         >
         <span class="employee-form__manager-text">руководитель</span>
     </div>
@@ -33,8 +30,8 @@
             @click="onSaveEditing"
         >Сохранить</button>
         <button
-            class="employee-form__cancell-button"
-            @click="onCancellEditing"
+            class="employee-form__cancel-button"
+            @click="onCancelEditing"
         >Отмена</button>
     </div>
 </div>

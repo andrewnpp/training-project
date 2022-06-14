@@ -1,9 +1,8 @@
-import Vuex from "vuex";
-import { withKnobs } from "@storybook/addon-knobs";
-import { getModule } from "vuex-module-decorators";
+import { action } from "@storybook/addon-actions";
+import { withKnobs, object } from "@storybook/addon-knobs";
 
-import { ModalEmployeeEditor } from "../src/components/ModalEmployeeEditor";
-import { AppModule } from "../src/AppModule";
+import { ModalEmployeeEditor } from "../src/components/Employee/ModalEmployeeEditor";
+import { IEmployee } from "src/components/Interfaces";
 
 export default {
     title: "Employees",
@@ -11,13 +10,31 @@ export default {
 };
 
 export const modalEmployeeEditor = () => ({
+    props: {
+        employee: { default: object("employee", null) }
+    },
     components: { ModalEmployeeEditor },
-    template: "<ModalEmployeeEditor />",
-    store: new Vuex.Store({
-        modules: { AppModule }
-    }),
-    created() {
-        const module = getModule(AppModule, this.$store);
-        module.setIsEditing(true);
+    template: `
+    <div>
+        <button @click="showModal=true">Show modal</button>
+        <ModalEmployeeEditor
+            v-if="showModal"
+            :employee="employee"
+            :onSaveAction="onSaveAction"
+            :onClose="onClose"
+        />
+    </div>`,
+    data() {
+        return {
+            showModal: false
+        };
+    },
+    methods: {
+        onSaveAction(employee: IEmployee) {
+            action("onSaveAction")(employee);
+        },
+        onClose() {
+            this.showModal = false;
+        }
     }
 });

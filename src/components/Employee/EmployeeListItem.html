@@ -3,7 +3,10 @@
         <div class="employee-list-item__avatar"></div>
         <div class="employee-list-item__employee-info">
             <span class="employee-list-item__employee-full-name">{{ employee.fullName }}</span>
-            <span class="employee-list-item__employee-position">{{ employee.position }}<span v-if="employee.isManager"> (Р)</span></span>
+            <span class="employee-list-item__employee-position">
+                {{ employee.position }}
+                <span v-if="employee.isManager"> (Р)</span>
+            </span>
         </div>
     </div>
     <div class="employee-list-item__text-buttons">
@@ -16,4 +19,10 @@
             @click="onRemoveEmployee(employee.id)"
         >Удалить</span>
     </div>
+    <ModalEmployeeEditor
+        v-if="showEmployeeEditor"
+        :employee="editedEmployee"
+        :onSave="onSaveEmployee"
+        :onClose="onCloseEmployeeEditor"
+    />
 </li>

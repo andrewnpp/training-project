@@ -1,18 +1,16 @@
 <div
     class="modal-window__container"
-    v-if="isEditing"
-    @click.self="onCancellEditing"
+    @click.self="onClickClose"
 >
     <div class="modal-window__content">
         <div class="modal-window__header">
             <span
                 class="modal-window__title-text"
-                v-if="!hideTitleText"
             >{{ titleText }}</span>
             <button
                 class="modal-window__close-button"
                 v-if="!hideCloseButton"
-                @click="onCancellEditing"
+                @click="onClickClose"
             >&times;</button>
         </div>
         <slot></slot>
