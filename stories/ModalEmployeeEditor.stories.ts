@@ -20,7 +20,7 @@ export const modalEmployeeEditor = () => ({
         <ModalEmployeeEditor
             v-if="showModal"
             :employee="employee"
-            :onSaveAction="onSaveAction"
+            :onSave="onSave"
             :onClose="onClose"
         />
     </div>`,
@@ -30,8 +30,8 @@ export const modalEmployeeEditor = () => ({
         };
     },
     methods: {
-        onSaveAction(employee: IEmployee) {
-            action("onSaveAction")(employee);
+        onSave(employee: IEmployee) {
+            action("onSave")(employee);
         },
         onClose() {
             this.showModal = false;

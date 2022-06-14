@@ -12,9 +12,9 @@ export class EmployeeForm extends Vue {
     @Prop()
     public employee: IEmployee;
     @Prop()
-    public onSaveAction: (editedEmployee: IEmployee) => void;
+    public onSave: (editedEmployee: IEmployee) => void;
     @Prop()
-    public onCancelAction: () => void;
+    public onCancel: () => void;
 
     public fullName: string = "";
     public position: string = "";
@@ -25,7 +25,7 @@ export class EmployeeForm extends Vue {
     }
 
     public onSaveEditing(): void {
-        this.onSaveAction({
+        this.onSave({
             id: this.employee?.id || Date.now(),
             fullName: this.fullName,
             position: this.position,
@@ -34,7 +34,7 @@ export class EmployeeForm extends Vue {
     }
 
     public onCancelEditing(): void {
-        this.onCancelAction();
+        this.onCancel();
     }
 
     created() {

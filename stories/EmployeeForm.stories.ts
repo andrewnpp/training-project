@@ -16,13 +16,13 @@ function getEmployeeStory(employee: IEmployee): Component {
             employee: { default: object("employee", employee) }
         },
         components: { EmployeeForm },
-        template: '<EmployeeForm :employee="employee" :onSaveAction="onSaveAction" :onCancelAction="onCancelAction" />',
+        template: '<EmployeeForm :employee="employee" :onSave="onSave" :onCancel="onCancel" />',
         methods: {
-            onSaveAction(employee: IEmployee) {
-                action("onSaveAction")(employee);
+            onSave(employee: IEmployee) {
+                action("onSave")(employee);
             },
-            onCancelAction() {
-                action("onCancelAction")();
+            onCancel() {
+                action("onCancel")();
             }
         }
     };

@@ -15,7 +15,7 @@ export class ModalEmployeeEditor extends Vue {
     @Prop()
     public employee: IEmployee;
     @Prop()
-    public onSaveAction: (editedEmployee: IEmployee) => void;
+    public onSave: (editedEmployee: IEmployee) => void;
     @Prop()
     public onClose: () => void;
 
@@ -24,7 +24,7 @@ export class ModalEmployeeEditor extends Vue {
     }
 
     public onSaveForm(employee: IEmployee): void {
-        this.onSaveAction(employee);
+        this.onSave(employee);
         this.onClose();
     }
 }
