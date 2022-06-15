@@ -2,7 +2,7 @@ import { action } from "@storybook/addon-actions";
 import { withKnobs, object } from "@storybook/addon-knobs";
 import { Component } from "vue";
 
-import { EmployeeForm } from "../src/components/Employee/EmployeeForm";
+import { EmployeeForm } from "../src/components/Employee/EmployeeForm/EmployeeForm";
 import { IEmployee } from "src/components/Interfaces";
 
 export default {

@@ -2,10 +2,10 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
-import { ModalWindow } from "../Common/ModalWindow";
-import { EmployeeForm } from "./EmployeeForm";
+import { ModalWindow } from "../../Common/ModalWindow/ModalWindow";
+import { EmployeeForm } from "../EmployeeForm/EmployeeForm";
 import "./modal-employee-editor.scss";
-import { IEmployee } from "../Interfaces";
+import { IEmployee } from "../../Interfaces";
 
 @Component({
     template: require("./ModalEmployeeEditor.html"),

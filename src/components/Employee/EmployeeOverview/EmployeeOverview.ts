@@ -1,8 +1,8 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 
-import { EmployeeFilter } from "./EmployeeFilter";
-import { EmployeeList } from "./EmployeeList";
+import { EmployeeFilter } from "../EmployeeFilter/EmployeeFilter";
+import { EmployeeList } from "../EmployeeList/EmployeeList";
 import "./employee-overview.scss";
 
 @Component({

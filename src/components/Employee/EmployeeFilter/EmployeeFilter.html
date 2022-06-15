@@ -25,10 +25,4 @@
         class="employee-filter__add-button"
         @click="onClickAddButton"
     >Добавить</button>
-    <ModalEmployeeEditor
-        v-if="showEmployeeEditor"
-        :employee="editedEmployee"
-        :onSave="onAddEmployee"
-        :onClose="onCloseEmployeeEditor"
-    />
 </div>

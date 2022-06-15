@@ -16,13 +16,10 @@
         >Редактировать</span>
         <span
             class="employee-list-item__text-button"
-            @click="onRemoveEmployee(employee.id)"
+            @click="onClickDeleteButton(employee)"
         >Удалить</span>
     </div>
-    <ModalEmployeeEditor
-        v-if="showEmployeeEditor"
-        :employee="editedEmployee"
-        :onSave="onSaveEmployee"
-        :onClose="onCloseEmployeeEditor"
-    />
 </li>
+
+<!-- @click="onRemoveEmployee(employee)" -->
+<!-- @click="onClickDeleteButton(employee)" -->

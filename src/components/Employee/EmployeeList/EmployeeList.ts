@@ -2,10 +2,10 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { getModule } from "vuex-module-decorators";
 
-import { EmployeeListItem } from "./EmployeeListItem";
+import { EmployeeListItem } from "../EmployeeListItem/EmployeeListItem";
 import "./employee-list.scss";
-import { IEmployee } from "../Interfaces";
-import { AppModule } from "../../AppModule";
+import { IEmployee } from "../../Interfaces";
+import { AppModule } from "../../../AppModule";
 
 @Component({
     template: require("./EmployeeList.html"),

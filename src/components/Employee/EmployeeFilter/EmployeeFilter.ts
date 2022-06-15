@@ -3,9 +3,10 @@ import Component from "vue-class-component";
 import { getModule } from "vuex-module-decorators";
 
 import "./employee-filter.scss";
-import { AppModule } from "../../AppModule";
-import { IEmployee } from "../Interfaces";
-import { ModalEmployeeEditor } from "./ModalEmployeeEditor";
+import { AppModule } from "../../../AppModule";
+import { ModalEmployeeEditorModule } from "../ModalEmployeeEditor/ModalEmployeeEditorModule";
+import { IEmployee } from "../../Interfaces";
+import { ModalEmployeeEditor } from "../ModalEmployeeEditor/ModalEmployeeEditor";
 
 @Component({
     template: require("./EmployeeFilter.html"),
@@ -13,9 +14,7 @@ import { ModalEmployeeEditor } from "./ModalEmployeeEditor";
 })
 export class EmployeeFilter extends Vue {
     private appModule: AppModule;
-
-    public showEmployeeEditor: boolean = false;
-    public editedEmployee: IEmployee = null;
+    private modalEmployeeEditorModule: ModalEmployeeEditorModule;
 
     public get inputText(): string {
         return this.appModule.getInputText;
@@ -38,18 +37,15 @@ export class EmployeeFilter extends Vue {
     }
 
     public onClickAddButton(): void {
-        this.showEmployeeEditor = true;
+        this.modalEmployeeEditorModule.show({ employee: null, onSave: this.onAddEmployee });
     }
 
     public onAddEmployee(employee: IEmployee): void {
         this.appModule.addEmployee(employee);
     }
 
-    public onCloseEmployeeEditor(): void {
-        this.showEmployeeEditor = false;
-    }
-
     created() {
         this.appModule = getModule(AppModule, this.$store);
+        this.modalEmployeeEditorModule = getModule(ModalEmployeeEditorModule, this.$store);
     }
 }

@@ -88,8 +88,8 @@ export class AppModule extends VuexModule<AppModule> {
     }
 
     @Action
-    public removeEmployee(deleteId: number): void {
-        this.commitRemoveEmployee(deleteId);
+    public removeEmployee(employee: IEmployee): void {
+        this.commitRemoveEmployee(employee.id);
     }
 
     @Action

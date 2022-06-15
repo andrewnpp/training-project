@@ -4,3 +4,5 @@ export interface IEmployee {
     isManager: boolean;
     id: number;
 }
+
+export type IMessageDialogWindowButtons = "ok" | "okCancel" | "yesNo" | "yesNoCancel";

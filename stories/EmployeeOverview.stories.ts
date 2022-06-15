@@ -2,8 +2,8 @@ import Vuex from "vuex";
 import { withKnobs } from "@storybook/addon-knobs";
 import { getModule } from "vuex-module-decorators";
 
-import { EmployeeOverview } from "../src/components/Employee/EmployeeOverview";
-import { ModalEmployeeEditor } from "../src/components/Employee/ModalEmployeeEditor";
+import { EmployeeOverview } from "../src/components/Employee/EmployeeOverview/EmployeeOverview";
+import { ModalEmployeeEditor } from "../src/components/Employee/ModalEmployeeEditor/ModalEmployeeEditor";
 import { AppModule } from "../src/AppModule";
 import { moduledEmployees } from "../src/components/Employees";
 

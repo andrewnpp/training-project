@@ -1,7 +1,7 @@
 import { action } from "@storybook/addon-actions";
 import { withKnobs, object } from "@storybook/addon-knobs";
 
-import { ModalEmployeeEditor } from "../src/components/Employee/ModalEmployeeEditor";
+import { ModalEmployeeEditor } from "../src/components/Employee/ModalEmployeeEditor/ModalEmployeeEditor";
 import { IEmployee } from "src/components/Interfaces";
 
 export default {

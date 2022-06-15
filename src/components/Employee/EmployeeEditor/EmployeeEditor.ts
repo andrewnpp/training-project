@@ -3,8 +3,8 @@ import Component from "vue-class-component";
 import { getModule } from "vuex-module-decorators";
 
 import "./employee-editor.scss";
-import { AppModule } from "../../AppModule";
-import { IEmployee } from "../Interfaces";
+import { AppModule } from "../../../AppModule";
+import { IEmployee } from "../../Interfaces";
 
 @Component({
     template: require("./EmployeeEditor.html")

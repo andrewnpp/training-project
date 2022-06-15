@@ -1,6 +1,6 @@
 import { withKnobs, text, boolean } from "@storybook/addon-knobs";
 
-import { ModalWindow } from "../src/components/Common/ModalWindow";
+import { ModalWindow } from "../src/components/Common/ModalWindow/ModalWindow";
 
 export default {
     title: "Modal",
