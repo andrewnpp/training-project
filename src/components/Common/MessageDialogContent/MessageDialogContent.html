@@ -1,0 +1,21 @@
+<div class="message-dialog-content__container">
+    <span>{{ messageText }}</span>
+    <div class="message-dialog-content_buttons">
+        <button
+            v-if="dialogType === 'ok' || dialogType === 'okCancel'"
+            @click="onConfirm(employee)"
+        >Ок</button>
+        <button
+            v-if="dialogType === 'yesNo' || dialogType === 'yesNoCancel'"
+            @click="onConfirm(employee)"
+        >Да</button>
+        <button
+            v-if="dialogType === 'yesNo' || dialogType === 'yesNoCancel'"
+            @click="onClose"
+        >Нет</button>
+        <button
+            v-if="dialogType === 'okCancel' || dialogType === 'yesNoCancel'"
+            @click="onClose"
+        >Отмена</button>
+    </div>
+</div>

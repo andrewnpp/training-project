@@ -5,4 +5,4 @@ export interface IEmployee {
     id: number;
 }
 
-export type IMessageDialogWindowButtons = "ok" | "okCancel" | "yesNo" | "yesNoCancel";
+export type IMessageDialogType = "ok" | "yesNo" | "yesNoCancel";

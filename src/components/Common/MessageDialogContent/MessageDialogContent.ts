@@ -2,19 +2,19 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
-import "./message-dialog-window-content.scss";
-import { IEmployee, IMessageDialogWindowButtons } from "src/components/Interfaces";
+import "./message-dialog-content.scss";
+import { IEmployee, IMessageDialogType } from "src/components/Interfaces";
 
 @Component({
-    template: require("./MessageDialogWindowContent.html")
+    template: require("./MessageDialogContent.html")
 })
-export class MessageDialogWindowContent extends Vue {
+export class MessageDialogContent extends Vue {
     @Prop()
     public employee: IEmployee;
     @Prop()
     public messageText: string;
     @Prop()
-    public buttonType: IMessageDialogWindowButtons;
+    public dialogType: IMessageDialogType;
     @Prop()
     public onSave: (employee: IEmployee) => void;
     @Prop()

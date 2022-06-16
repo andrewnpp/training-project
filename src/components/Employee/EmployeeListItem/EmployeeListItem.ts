@@ -8,7 +8,7 @@ import { IEmployee } from "../../Interfaces";
 import { AppModule } from "../../../AppModule";
 import { ModalEmployeeEditor } from "../ModalEmployeeEditor/ModalEmployeeEditor";
 import { ModalEmployeeEditorModule } from "../ModalEmployeeEditor/ModalEmployeeEditorModule";
-import { MessageDialogWindowModule } from "../../Common/MessageDialogWindow/MessageDialogWindowModule";
+import { MessageDialogModule } from "../../Common/MessageDialog/MessageDialogModule";
 
 @Component({
     template: require("./EmployeeListItem.html"),
@@ -20,22 +20,22 @@ export class EmployeeListItem extends Vue {
 
     private appModule: AppModule;
     private modalEmployeeEditorModule: ModalEmployeeEditorModule;
-    private messageDialogWindowModule: MessageDialogWindowModule;
+    private messageDialogModule: MessageDialogModule;
 
-    public onRemoveEmployee(employee: IEmployee): void {
-        this.appModule.removeEmployee(employee);
+    public onRemoveEmployee(): void {
+        this.appModule.removeEmployee(this.employee);
     }
 
     public onClickEditButton(employee: IEmployee): void {
         this.modalEmployeeEditorModule.show({ employee, onSave: this.onSaveEmployee });
     }
 
-    public onClickDeleteButton(employee: IEmployee): void {
-        this.messageDialogWindowModule.show({
-            employee,
-            messageText: `Удалить сотрудника ${employee.fullName}?`,
-            buttonType: "yesNoCancel",
-            onSave: this.onRemoveEmployee
+    public onClickDeleteButton(): void {
+        this.messageDialogModule.show({
+            titleText: "Внимание",
+            messageText: `Удалить сотрудника ${this.employee.fullName}?`,
+            dialogType: "yesNoCancel",
+            onConfirm: this.onRemoveEmployee
         });
     }
 
@@ -46,6 +46,6 @@ export class EmployeeListItem extends Vue {
     created() {
         this.appModule = getModule(AppModule, this.$store);
         this.modalEmployeeEditorModule = getModule(ModalEmployeeEditorModule, this.$store);
-        this.messageDialogWindowModule = getModule(MessageDialogWindowModule, this.$store);
+        this.messageDialogModule = getModule(MessageDialogModule, this.$store);
     }
 }

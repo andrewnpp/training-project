@@ -7,11 +7,11 @@ import "./app.scss";
 import { moduledEmployees } from "./components/Employees";
 import { AppModule } from "./AppModule";
 import { ModalEmployeeEditorContainer } from "./components/Employee/ModalEmployeeEditor/ModalEmployeeEditorContainer";
-import { MessageDialogWindowContainer } from "./components/Common/MessageDialogWindow/MessageDialogWindowContainer";
+import { MessageDialogContainer } from "./components/Common/MessageDialog/MessageDialogContainer";
 
 @Component({
     template: require("./App.html"),
-    components: { EmployeeOverview, ModalEmployeeEditorContainer, MessageDialogWindowContainer }
+    components: { EmployeeOverview, ModalEmployeeEditorContainer, MessageDialogContainer }
 })
 export class App extends Vue {
     private appModule: AppModule;
