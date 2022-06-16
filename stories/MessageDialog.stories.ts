@@ -1,4 +1,3 @@
-import { Component } from "vue";
 import { action } from "@storybook/addon-actions";
 import { withKnobs, text } from "@storybook/addon-knobs";
 
