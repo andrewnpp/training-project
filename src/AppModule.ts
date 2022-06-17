@@ -112,7 +112,13 @@ export class AppModule extends VuexModule<AppModule> {
         } catch (err) {
             this.context.dispatch(
                 "MessageDialogModule/show",
-                { titleText: "Error", messageText: "Произошла ошибка", dialogType: "ok" },
+                {
+                    titleText: "Error",
+                    messageText: "Произошла ошибка",
+                    dialogType: "ok",
+                    onConfirm: () => this.setError(false),
+                    onCancel: () => this.setError(false)
+                },
                 { root: true }
             );
             this.commitLoading(false);
