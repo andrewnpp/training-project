@@ -18,6 +18,10 @@ export class EmployeeList extends Vue {
         return this.appModule.getFilteredEmployees;
     }
 
+    public get loading(): boolean {
+        return this.appModule.getLoading;
+    }
+
     created() {
         this.appModule = getModule(AppModule, this.$store);
     }

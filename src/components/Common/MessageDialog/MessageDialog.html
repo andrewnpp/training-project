@@ -3,13 +3,8 @@
         <span>{{ messageText }}</span>
         <div class="message-dialog_buttons">
             <button
-                v-if="dialogType === 'ok'"
                 @click="onConfirm"
             >{{ confirmTitleText }}</button>
-            <button
-                v-if="dialogType === 'yesNo' || dialogType === 'yesNoCancel'"
-                @click="onConfirm"
-            >Да</button>
             <button
                 v-if="dialogType === 'yesNo' || dialogType === 'yesNoCancel'"
                 @click="onDeny"

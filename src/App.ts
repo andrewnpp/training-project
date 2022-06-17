@@ -4,7 +4,6 @@ import { getModule } from "vuex-module-decorators";
 
 import { EmployeeOverview } from "./components/Employee/EmployeeOverview/EmployeeOverview";
 import "./app.scss";
-import { moduledEmployees } from "./components/Employees";
 import { AppModule } from "./AppModule";
 import { ModalEmployeeEditorContainer } from "./components/Employee/ModalEmployeeEditor/ModalEmployeeEditorContainer";
 import { MessageDialogContainer } from "./components/Common/MessageDialog/MessageDialogContainer";
@@ -18,6 +17,6 @@ export class App extends Vue {
 
     created() {
         this.appModule = getModule(AppModule, this.$store);
-        this.appModule.setEmployees(moduledEmployees);
+        this.appModule.fetchEmployees();
     }
 }

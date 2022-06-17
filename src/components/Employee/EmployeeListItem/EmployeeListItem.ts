@@ -23,7 +23,7 @@ export class EmployeeListItem extends Vue {
     private messageDialogModule: MessageDialogModule;
 
     public onRemoveEmployee(): void {
-        this.appModule.removeEmployee(this.employee);
+        this.appModule.removeServiceEmployee(this.employee.id);
     }
 
     public onClickEditButton(employee: IEmployee): void {
@@ -34,13 +34,17 @@ export class EmployeeListItem extends Vue {
         this.messageDialogModule.show({
             titleText: "Внимание",
             messageText: `Удалить сотрудника ${this.employee.fullName}?`,
-            dialogType: "yesNoCancel",
+            dialogType: "yesNo",
             onConfirm: this.onRemoveEmployee
         });
     }
 
     public onSaveEmployee(employee: IEmployee): void {
-        this.appModule.updateEmployee(employee);
+        this.appModule.updateServiceEmployee(employee);
+    }
+
+    public get error(): boolean {
+        return this.appModule.getError;
     }
 
     created() {

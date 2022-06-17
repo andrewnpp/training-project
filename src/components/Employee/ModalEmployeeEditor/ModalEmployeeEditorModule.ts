@@ -10,10 +10,16 @@ export interface IShowModalEmployeeEditorConfig {
 
 @Module({ name: "ModalEmployeeEditorModule", namespaced: true })
 export class ModalEmployeeEditorModule extends VuexModule<ModalEmployeeEditorModule> {
-    public isVisible: boolean = false;
-    public employee: IEmployee = null;
-    public onSave: (employee: IEmployee) => void = null;
-    public onClose: () => void = null;
+    private isVisible: boolean = false;
+    private employee: IEmployee = null;
+    private onSave: (employee: IEmployee) => void = null;
+    private onClose: () => void = null;
+    private previousEmployee: IEmployee = null;
+
+    @Mutation
+    private commitPreviousEmployee(value: IEmployee) {
+        this.previousEmployee = { ...value };
+    }
 
     @Mutation
     private commitIsVisible(value: boolean) {
@@ -33,6 +39,11 @@ export class ModalEmployeeEditorModule extends VuexModule<ModalEmployeeEditorMod
     @Mutation
     private commitOnClose(value: () => void) {
         this.onClose = value;
+    }
+
+    @Action
+    public setPreviousEmployee(value: IEmployee) {
+        this.commitPreviousEmployee(value);
     }
 
     @Action
@@ -58,18 +69,23 @@ export class ModalEmployeeEditorModule extends VuexModule<ModalEmployeeEditorMod
     @Action
     public show(config: IShowModalEmployeeEditorConfig): void {
         const { employee, onSave, onClose } = config;
-        this.setIsVisible(true);
-        this.setEmployee(employee);
-        this.setOnSave(onSave);
-        this.setOnClose(onClose);
+        this.commitIsVisible(true);
+        this.commitEmployee(employee);
+        this.commitOnSave(onSave);
+        this.commitOnClose(onClose);
     }
 
     @Action
     public hide(): void {
-        this.setIsVisible(false);
-        this.setEmployee(null);
-        this.setOnSave(null);
-        this.setOnClose(null);
+        this.context.dispatch("AppModule/setError", false, { root: true });
+        this.commitIsVisible(false);
+        this.commitEmployee(null);
+        this.commitOnSave(null);
+        this.commitOnClose(null);
+    }
+
+    public get getPreviousEmployee(): IEmployee {
+        return this.previousEmployee;
     }
 
     public get getIsVisible(): boolean {

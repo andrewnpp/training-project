@@ -1,4 +1,6 @@
 <ul class="employee-list__container">
+    <span v-if="loading">Loading...</span>
+    <span v-else-if="!employees.length">No data</span>
     <EmployeeListItem
         class="employee-list__list-item"
         v-for="employee in employees"

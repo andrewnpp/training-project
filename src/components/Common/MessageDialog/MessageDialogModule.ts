@@ -7,21 +7,21 @@ export interface IShowMessageDialogConfig {
     messageText: string;
     dialogType: IMessageDialogType;
     confirmTitle?: string;
-    onConfirm: () => void;
+    onConfirm?: () => void;
     onDeny?: () => void;
     onCancel?: () => void;
 }
 
 @Module({ name: "MessageDialogModule", namespaced: true })
 export class MessageDialogModule extends VuexModule<MessageDialogModule> {
-    public isVisible: boolean = false;
-    public titleText: string = null;
-    public messageText: string = null;
-    public dialogType: IMessageDialogType = null;
-    public confirmTitle: string = null;
-    public onConfirm: () => void = null;
-    public onDeny: () => void = null;
-    public onCancel: () => void = null;
+    private isVisible: boolean = false;
+    private titleText: string = null;
+    private messageText: string = null;
+    private dialogType: IMessageDialogType = null;
+    private confirmTitle: string = null;
+    private onConfirm: () => void = null;
+    private onDeny: () => void = null;
+    private onCancel: () => void = null;
 
     @Mutation
     private commitIsVisible(value: boolean) {
@@ -106,26 +106,26 @@ export class MessageDialogModule extends VuexModule<MessageDialogModule> {
     @Action
     public show(config: IShowMessageDialogConfig): void {
         const { titleText, messageText, dialogType, confirmTitle, onConfirm, onDeny, onCancel } = config;
-        this.setIsVisible(true);
-        this.setTitleText(titleText);
-        this.setMessageText(messageText);
-        this.setDialogType(dialogType);
-        this.setConfirmTitle(confirmTitle);
-        this.setOnConfirm(onConfirm);
-        this.setOnDeny(onDeny);
-        this.setOnCancel(onCancel);
+        this.commitIsVisible(true);
+        this.commitTitleText(titleText);
+        this.commitMessageText(messageText);
+        this.commitDialogType(dialogType);
+        this.commitConfirmTitle(confirmTitle);
+        this.commitOnConfirm(onConfirm);
+        this.commitOnDeny(onDeny);
+        this.commitOnCancel(onCancel);
     }
 
     @Action
     public hide(): void {
-        this.setIsVisible(false);
-        this.setTitleText(null);
-        this.setMessageText(null);
-        this.setDialogType(null);
-        this.setConfirmTitle(null);
-        this.setOnConfirm(null);
-        this.setOnDeny(null);
-        this.setOnCancel(null);
+        this.commitIsVisible(false);
+        this.commitTitleText(null);
+        this.commitMessageText(null);
+        this.commitDialogType(null);
+        this.commitConfirmTitle(null);
+        this.commitOnConfirm(null);
+        this.commitOnDeny(null);
+        this.commitOnCancel(null);
     }
 
     public get getIsVisible(): boolean {

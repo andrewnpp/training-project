@@ -41,7 +41,7 @@ export class EmployeeFilter extends Vue {
     }
 
     public onAddEmployee(employee: IEmployee): void {
-        this.appModule.addEmployee(employee);
+        this.appModule.addServiceEmployee(employee);
     }
 
     created() {
