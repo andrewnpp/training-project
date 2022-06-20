@@ -37,7 +37,7 @@ export class EmployeeFilter extends Vue {
     }
 
     public onClickAddButton(): void {
-        this.modalEmployeeEditorModule.show({ employee: null, onSave: this.onAddEmployee });
+        this.modalEmployeeEditorModule.show({ employee: null, onSave: this.appModule.addServiceEmployee });
     }
 
     public onAddEmployee(employee: IEmployee): void {

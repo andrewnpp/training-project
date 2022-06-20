@@ -28,7 +28,10 @@ export class ModalEmployeeEditorContainer extends Vue {
     }
 
     public onSave(employee: IEmployee): void {
-        this.modalEmployeeEditorModule.getOnSave?.(employee);
+        this.modalEmployeeEditorModule
+            .getOnSave?.(employee)
+            .then(() => this.onClose())
+            .catch(err => console.log(err));
     }
 
     public onClose(): void {

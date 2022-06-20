@@ -36,7 +36,6 @@ export class ModalEmployeeEditor extends Vue {
 
     public onSaveForm(employee: IEmployee): void {
         this.onSave(employee);
-        this.onClose();
     }
 
     created() {

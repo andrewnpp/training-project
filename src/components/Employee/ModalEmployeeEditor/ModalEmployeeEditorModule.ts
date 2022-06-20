@@ -4,7 +4,7 @@ import { IEmployee } from "../../../components/Interfaces";
 
 export interface IShowModalEmployeeEditorConfig {
     employee: IEmployee;
-    onSave: (employee: IEmployee) => void;
+    onSave: (employee: IEmployee) => Promise<void>;
     onClose?: () => void;
 }
 
@@ -12,14 +12,8 @@ export interface IShowModalEmployeeEditorConfig {
 export class ModalEmployeeEditorModule extends VuexModule<ModalEmployeeEditorModule> {
     private isVisible: boolean = false;
     private employee: IEmployee = null;
-    private onSave: (employee: IEmployee) => void = null;
+    private onSave: (employee: IEmployee) => Promise<void> = null;
     private onClose: () => void = null;
-    private previousEmployee: IEmployee = null;
-
-    @Mutation
-    private commitPreviousEmployee(value: IEmployee) {
-        this.previousEmployee = { ...value };
-    }
 
     @Mutation
     private commitIsVisible(value: boolean) {
@@ -32,18 +26,13 @@ export class ModalEmployeeEditorModule extends VuexModule<ModalEmployeeEditorMod
     }
 
     @Mutation
-    private commitOnSave(value: (employee: IEmployee) => void) {
+    private commitOnSave(value: (employee: IEmployee) => Promise<void>) {
         this.onSave = value;
     }
 
     @Mutation
     private commitOnClose(value: () => void) {
         this.onClose = value;
-    }
-
-    @Action
-    public setPreviousEmployee(value: IEmployee) {
-        this.commitPreviousEmployee(value);
     }
 
     @Action
@@ -57,7 +46,7 @@ export class ModalEmployeeEditorModule extends VuexModule<ModalEmployeeEditorMod
     }
 
     @Action
-    public setOnSave(value: (employee: IEmployee) => void) {
+    public setOnSave(value: (employee: IEmployee) => Promise<void>) {
         this.commitOnSave(value);
     }
 
@@ -84,10 +73,6 @@ export class ModalEmployeeEditorModule extends VuexModule<ModalEmployeeEditorMod
         this.commitOnClose(null);
     }
 
-    public get getPreviousEmployee(): IEmployee {
-        return this.previousEmployee;
-    }
-
     public get getIsVisible(): boolean {
         return this.isVisible;
     }
@@ -96,7 +81,7 @@ export class ModalEmployeeEditorModule extends VuexModule<ModalEmployeeEditorMod
         return this.employee;
     }
 
-    public get getOnSave(): (employee: IEmployee) => void {
+    public get getOnSave(): (employee: IEmployee) => Promise<void> {
         return this.onSave;
     }
 

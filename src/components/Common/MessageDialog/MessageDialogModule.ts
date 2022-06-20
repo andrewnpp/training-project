@@ -7,7 +7,7 @@ export interface IShowMessageDialogConfig {
     messageText: string;
     dialogType: IMessageDialogType;
     confirmTitle?: string;
-    onConfirm?: () => void;
+    onConfirm?: () => Promise<void>;
     onDeny?: () => void;
     onCancel?: () => void;
 }
@@ -19,7 +19,7 @@ export class MessageDialogModule extends VuexModule<MessageDialogModule> {
     private messageText: string = null;
     private dialogType: IMessageDialogType = null;
     private confirmTitle: string = null;
-    private onConfirm: () => void = null;
+    private onConfirm: () => Promise<void> = null;
     private onDeny: () => void = null;
     private onCancel: () => void = null;
 
@@ -49,7 +49,7 @@ export class MessageDialogModule extends VuexModule<MessageDialogModule> {
     }
 
     @Mutation
-    private commitOnConfirm(value: () => void) {
+    private commitOnConfirm(value: () => Promise<void>) {
         this.onConfirm = value;
     }
 
@@ -89,7 +89,7 @@ export class MessageDialogModule extends VuexModule<MessageDialogModule> {
     }
 
     @Action
-    public setOnConfirm(value: () => void) {
+    public setOnConfirm(value: () => Promise<void>) {
         this.commitOnConfirm(value);
     }
 
@@ -148,7 +148,7 @@ export class MessageDialogModule extends VuexModule<MessageDialogModule> {
         return this.confirmTitle;
     }
 
-    public get getOnConfirm(): () => void {
+    public get getOnConfirm(): () => Promise<void> {
         return this.onConfirm;
     }
 

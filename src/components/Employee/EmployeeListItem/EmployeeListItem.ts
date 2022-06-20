@@ -22,12 +22,8 @@ export class EmployeeListItem extends Vue {
     private modalEmployeeEditorModule: ModalEmployeeEditorModule;
     private messageDialogModule: MessageDialogModule;
 
-    public onRemoveEmployee(): void {
-        this.appModule.removeServiceEmployee(this.employee.id);
-    }
-
     public onClickEditButton(employee: IEmployee): void {
-        this.modalEmployeeEditorModule.show({ employee, onSave: this.onSaveEmployee });
+        this.modalEmployeeEditorModule.show({ employee, onSave: this.appModule.updateServiceEmployee });
     }
 
     public onClickDeleteButton(): void {
@@ -35,16 +31,8 @@ export class EmployeeListItem extends Vue {
             titleText: "Внимание",
             messageText: `Удалить сотрудника ${this.employee.fullName}?`,
             dialogType: "yesNo",
-            onConfirm: this.onRemoveEmployee
+            onConfirm: () => this.appModule.removeServiceEmployee(this.employee.id)
         });
-    }
-
-    public onSaveEmployee(employee: IEmployee): void {
-        this.appModule.updateServiceEmployee(employee);
-    }
-
-    public get error(): boolean {
-        return this.appModule.getError;
     }
 
     created() {

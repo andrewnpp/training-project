@@ -1,7 +1,10 @@
-import { Module, VuexModule, Mutation, Action } from "vuex-module-decorators";
+import { Module, VuexModule, Mutation, Action, config as vuexModuleDecoratorsConfig } from "vuex-module-decorators";
 
 import { IEmployee } from "./components/Interfaces";
 import { IEmployeeService, EmployeeServiceTest } from "./services";
+
+// To prevent error wrapping
+vuexModuleDecoratorsConfig.rawError = true;
 
 @Module({ name: "AppModule", namespaced: true })
 export class AppModule extends VuexModule<AppModule> {
@@ -108,21 +111,11 @@ export class AppModule extends VuexModule<AppModule> {
         try {
             await this.employeeServiceTest.removeEmployee(deleteId.toString());
             this.commitRemoveEmployee(deleteId);
-            this.commitLoading(false);
         } catch (err) {
-            this.context.dispatch(
-                "MessageDialogModule/show",
-                {
-                    titleText: "Error",
-                    messageText: "Произошла ошибка",
-                    dialogType: "ok",
-                    onConfirm: () => this.setError(false),
-                    onCancel: () => this.setError(false)
-                },
-                { root: true }
-            );
-            this.commitLoading(false);
             this.commitError(true);
+            throw err;
+        } finally {
+            this.commitLoading(false);
         }
     }
 
@@ -183,7 +176,6 @@ export class AppModule extends VuexModule<AppModule> {
 
     @Action
     public async addServiceEmployee(value: IEmployee): Promise<void> {
-        this.context.dispatch("ModalEmployeeEditorModule/setPreviousEmployee", value, { root: true });
         this.commitError(false);
         this.commitLoading(true);
         try {
@@ -194,21 +186,16 @@ export class AppModule extends VuexModule<AppModule> {
                 code: value.id.toString()
             });
             this.commitAddEmployee(value);
-            this.commitLoading(false);
         } catch (err) {
-            this.commitLoading(false);
             this.commitError(true);
-            this.context.dispatch(
-                "ModalEmployeeEditorModule/show",
-                { employee: this.context.rootGetters["ModalEmployeeEditorModule/getPreviousEmployee"], onSave: this.addServiceEmployee },
-                { root: true }
-            );
+            throw err;
+        } finally {
+            this.commitLoading(false);
         }
     }
 
     @Action
     public async updateServiceEmployee(value: IEmployee): Promise<void> {
-        this.context.dispatch("ModalEmployeeEditorModule/setPreviousEmployee", value, { root: true });
         this.commitError(false);
         this.commitLoading(true);
         try {
@@ -219,15 +206,11 @@ export class AppModule extends VuexModule<AppModule> {
                 code: value.id.toString()
             });
             this.commitUpdateEmployee(value);
-            this.commitLoading(false);
         } catch (err) {
-            this.commitLoading(false);
             this.commitError(true);
-            this.context.dispatch(
-                "ModalEmployeeEditorModule/show",
-                { employee: this.context.rootGetters["ModalEmployeeEditorModule/getPreviousEmployee"], onSave: this.updateServiceEmployee },
-                { root: true }
-            );
+            throw err;
+        } finally {
+            this.commitLoading(false);
         }
     }
 
