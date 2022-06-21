@@ -3,7 +3,6 @@ import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 import { getModule } from "vuex-module-decorators";
 
-import "./employee-list-item.scss";
 import { IEmployee } from "../../Interfaces";
 import { AppModule } from "../../../AppModule";
 import { ModalEmployeeEditor } from "../ModalEmployeeEditor/ModalEmployeeEditor";

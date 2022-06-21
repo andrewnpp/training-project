@@ -5,7 +5,6 @@ import { getModule } from "vuex-module-decorators";
 
 import { ModalWindow } from "../../Common/ModalWindow/ModalWindow";
 import { EmployeeForm } from "../EmployeeForm/EmployeeForm";
-import "./modal-employee-editor.scss";
 import { IEmployee } from "../../Interfaces";
 import { AppModule } from "../../../AppModule";
 

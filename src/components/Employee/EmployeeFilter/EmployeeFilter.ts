@@ -2,7 +2,6 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { getModule } from "vuex-module-decorators";
 
-import "./employee-filter.scss";
 import { AppModule } from "../../../AppModule";
 import { ModalEmployeeEditorModule } from "../ModalEmployeeEditor/ModalEmployeeEditorModule";
 import { IEmployee } from "../../Interfaces";

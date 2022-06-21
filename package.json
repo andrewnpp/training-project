@@ -4,10 +4,13 @@
   "private": true,
   "scripts": {
     "lint": "eslint --fix src/**/*.ts",
-    "dev": "webpack serve --config webpack.config.dev.js",
-    "storybook": "start-storybook -s ../../.. -p 6006"
+    "dev": "gulp scss && webpack serve --config webpack.config.dev.js",
+    "storybook": "start-storybook -s ../../.. -p 6006",
+    "build-scss": "gulp scss"
   },
   "dependencies": {
+    "inversify-props": "^2.2.6",
+    "reflect-metadata": "^0.1.13",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^9.1.2",
@@ -34,6 +37,8 @@
     "eslint-plugin-jsdoc": "^39.3.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^6.2.2",
+    "gulp": "4.0.2",
+    "gulp-sass": "^5.1.0",
     "html-webpack-plugin": "^4.5.2",
     "node-sass": "^4.12.0",
     "prettier": "^2.2.1",

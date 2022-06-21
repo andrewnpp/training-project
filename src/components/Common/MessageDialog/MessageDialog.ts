@@ -3,7 +3,6 @@ import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
 import { ModalWindow } from "../ModalWindow/ModalWindow";
-import "./message-dialog.scss";
 import { IMessageDialogType } from "src/components/Interfaces";
 
 @Component({

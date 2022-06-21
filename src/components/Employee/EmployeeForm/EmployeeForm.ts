@@ -2,7 +2,6 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 
-import "./employee-form.scss";
 import { IEmployee } from "../../Interfaces";
 
 @Component({

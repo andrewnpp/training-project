@@ -1,0 +1,13 @@
+.employee-overview__container {
+    display: flex;
+    gap: 7px;
+    max-height: 95vh;
+}
+
+.employee-overview__filter {
+    flex-basis: 33%;
+}
+
+.employee-overview__list {
+    flex-basis: 67%;
+}
