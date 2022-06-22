@@ -4,7 +4,6 @@
     right: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.25);
-    // opacity: 0.25;
     position: fixed;
     display: flex;
 }
@@ -16,8 +15,8 @@
     border-radius: 2px;
     box-sizing: border-box;
     padding: $base-padding / 2 $base-padding $base-padding $base-padding;
-    width: 400px;
-    height: 200px;
+    width: $modal-window-width;
+    height: $modal-window-height;
     display: flex;
     flex-direction: column;
 }
@@ -32,8 +31,8 @@
 }
 
 .modal-window__close-button {
-    width: 16px;
-    height: 16px;
+    width: $modal-window-close-button-size;
+    height: $modal-window-close-button-size;
     cursor: pointer;
     transition: filter 0.15s;
 }
