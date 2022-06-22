@@ -1,43 +1,69 @@
 .employee-filter__container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    border: 1px solid lightgray;
-    padding: 7px;
+    gap: $base-padding * 2.5;
+    border: 1px solid var(--background-border);
+    box-sizing: border-box;
+    padding: $base-padding;
 }
 
-.employee-filter__filter-input {
+.employee-filter__filter-input-container {
+    position: relative;
     display: flex;
-    gap: 2px;
 }
 
 .employee-filter__clear-button {
-    border: 1px solid lightgray;
-    background-color: white;
+    position: absolute;
+    top: $input-clear-button-padding;
+    right: $input-clear-button-padding;
+    width: $input-clear-button-size;
+    height: $input-clear-button-size;
+    cursor: pointer;
+    transition: filter 0.15s;
 }
 
 .employee-filter__clear-button:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    filter: $close-icon-hover-svg-filter;
 }
 
-.employee-filter__filter-option {
-    align-self: flex-start;
+.employee-filter__filter-option-container {
+    display: flex;
+    gap: $base-padding;
+    justify-content: flex-start;
 }
 
 .employee-filter__add-button {
-    border: 1px solid lightgray;
-    padding: 6px;
-    background-color: white;
+    padding: 0;
+    border: none;
+    border-radius: 2px;
+    align-self: flex-end;
+    width: $button-width;
+    height: $button-height;
+    color: var(--on-primary-front);
+    background-color: var(--primary-front);
+    font: $base-font;
+    cursor: pointer;
+    transition: 0.15s;
 }
 
 .employee-filter__add-button:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--primary-front-hover);
 }
 
-#managersCheckbox {
+.employee-filter__checkbox {
     margin: 0;
 }
 
-#employeeFilter {
-    flex-grow: 1;
+.employee-filter__input {
+    border: 1px solid var(--tool-border);
+    border-radius: 1px;
+    box-sizing: border-box;
+    background-color: var(--input);
+    font: $smaller-normal-font;
+    flex: 1;
+    padding-right: $input-clear-button-size + $input-clear-button-padding * 2;
+}
+
+.employee-filter__checkbox-label {
+    user-select: none;
 }

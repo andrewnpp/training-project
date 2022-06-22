@@ -76,11 +76,17 @@ export class MessageDialogContainer extends Vue {
     public onDeny(): void {
         this.messageDialogModule.getOnDeny?.();
         this.messageDialogModule.hide();
+        if (this.error) {
+            this.appModule.setError(false);
+        }
     }
 
     public onCancel(): void {
         this.messageDialogModule.getOnCancel?.();
         this.messageDialogModule.hide();
+        if (this.error) {
+            this.appModule.setError(false);
+        }
     }
 
     created() {

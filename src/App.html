@@ -1,5 +1,9 @@
 <div id="app">
     <EmployeeOverview />
-    <ModalEmployeeEditorContainer />
-    <MessageDialogContainer />
+    <transition name="fade-modal-employee-container">
+        <ModalEmployeeEditorContainer />
+    </transition>
+    <transition name="fade-message-dialog-container">
+        <MessageDialogContainer />
+    </transition>
 </div>

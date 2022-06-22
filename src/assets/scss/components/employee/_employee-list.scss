@@ -1,11 +1,24 @@
 .employee-list__container {
-    border: 1px solid lightgray;
-    padding: 7px;
+    border: 1px solid var(--background-border);
+    box-sizing: border-box;
+    padding: $base-padding;
     margin: 0;
     list-style-type: none;
     overflow-x: hidden;
+
+    .list-enter-active, .list-leave-active {
+        transition: all 0.4s;
+    }
+    .list-enter, .list-leave-to {
+        opacity: 0;
+        transform: translateX(30px);
+    }
 }
 
 .employee-list__list-item:not(:first-child) {
-    margin-top: 7px;
+    margin-top: $base-padding;
+}
+
+.employee-list__loading {
+    margin-bottom: $base-padding;
 }

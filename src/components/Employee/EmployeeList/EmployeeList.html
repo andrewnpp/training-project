@@ -1,10 +1,18 @@
 <ul class="employee-list__container">
-    <span v-if="loading">Loading...</span>
-    <span v-else-if="!employees.length">No data</span>
-    <EmployeeListItem
-        class="employee-list__list-item"
-        v-for="employee in employees"
-        :key="employee.id"
-        :employee="employee"
-    />
+    <li
+        v-if="loading"
+        class="employee-list__loading"
+    >Loading...</li>
+    <li
+        v-else-if="!employees.length"
+        class="employee-list__no-data"
+    >No data</li>
+    <transition-group name="list">
+        <EmployeeListItem
+            class="employee-list__list-item"
+            v-for="employee in employees"
+            :key="employee.id"
+            :employee="employee"
+        />
+    </transition-group>
 </ul>

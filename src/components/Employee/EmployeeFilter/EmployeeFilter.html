@@ -1,25 +1,35 @@
 <div class="employee-filter__container">
-    <div class="employee-filter__filter-input">
+    <div class="employee-filter__filter-input-container">
         <input
             type="text"
-            id="employeeFilter"
+            class = "employee-filter__input"
             placeholder="Фильтр"
             :value="inputText"
             @input="onChangeInputTextHandler"
         >
-        <button
+        <img
+            src="./assets/images/close-icon.svg"
+            alt="CloseIcon"
             class="employee-filter__clear-button"
             @click="onClearFilterInput"
-        >&times;</button>
+        >
+        <!-- <button
+            class="employee-filter__clear-button"
+            @click="onClearFilterInput"
+        >&times;</button> -->
     </div>
-    <div class="employee-filter__filter-option">
+    <div class="employee-filter__filter-option-container">
         <input
             type="checkbox"
-            id="managersCheckbox"
+            class = "employee-filter__checkbox"
             :checked="onlyManagers"
+            id="employee-filter-checkbox"
             @change="onChangeCheckboxHandler"
         >
-        <span>только руководители</span>
+        <label
+            class="employee-filter__checkbox-label"
+            for="employee-filter-checkbox"
+        >только руководители</label>
     </div>
     <button
         class="employee-filter__add-button"

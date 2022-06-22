@@ -1,16 +1,19 @@
 <modal-window :titleText="titleText" :hideCloseButton="true" :onClose="onCancel">
     <div class="message-dialog__container">
-        <span>{{ messageText }}</span>
-        <div class="message-dialog_buttons">
+        <div class="message-dialog__text">{{ messageText }}</div>
+        <div class="message-dialog__buttons">
             <button
+                class="message-dialog__button"
                 @click="onConfirm"
             >{{ confirmTitleText }}</button>
             <button
                 v-if="dialogType === 'yesNo' || dialogType === 'yesNoCancel'"
+                class="message-dialog__button"
                 @click="onDeny"
             >Нет</button>
             <button
                 v-if="dialogType === 'yesNoCancel'"
+                class="message-dialog__button"
                 @click="onCancel"
             >Отмена</button>
         </div>

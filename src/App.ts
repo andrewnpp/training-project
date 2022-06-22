@@ -3,7 +3,6 @@ import Component from "vue-class-component";
 import { getModule } from "vuex-module-decorators";
 
 import { EmployeeOverview } from "./components/Employee/EmployeeOverview/EmployeeOverview";
-import "./app.scss";
 import { AppModule } from "./AppModule";
 import { ModalEmployeeEditorContainer } from "./components/Employee/ModalEmployeeEditor/ModalEmployeeEditorContainer";
 import { MessageDialogContainer } from "./components/Common/MessageDialog/MessageDialogContainer";

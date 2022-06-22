@@ -1,13 +1,14 @@
 .employee-overview__container {
     display: flex;
-    gap: 7px;
+    gap: $base-padding;
     max-height: 95vh;
 }
 
 .employee-overview__filter {
-    flex-basis: 33%;
+    min-width: 250px;
 }
 
 .employee-overview__list {
-    flex-basis: 67%;
+    min-width: 350px;
+    flex: 1;
 }

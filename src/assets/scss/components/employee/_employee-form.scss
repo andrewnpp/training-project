@@ -1,74 +1,108 @@
 .employee-form__container {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    margin-top: $base-padding * 2.75;
+    flex: 1;
+}
+
+.employee-form__form-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .employee-form__full-name-container {
     display: flex;
-    gap: 10px;
 }
 
 .employee-form__full-name-text {
-    font-size: smaller;
     align-self: center;
-    min-width: 70px;
+    width: $text-input-width;
 }
 
 .employee-form__full-name-input {
-    flex-grow: 1;
+    border: 1px solid var(--tool-border);
+    border-radius: 1px;
+    box-sizing: border-box;
+    background-color: var(--input);
+    font: $smaller-normal-font;
+    flex: 1;
 }
 
 .employee-form__position-container {
+    margin-top: $base-padding;
     display: flex;
-    gap: 10px;
 }
 
 .employee-form__position-text {
-    font-size: smaller;
     align-self: center;
-    min-width: 70px;
+    width: $text-input-width;
 }
 
 .employee-form__position-input {
-    flex-grow: 1;
+    border: 1px solid var(--tool-border);
+    border-radius: 1px;
+    box-sizing: border-box;
+    background-color: var(--input);
+    font: $smaller-normal-font;
+    flex: 1;
 }
 
 .employee-form__manager-container {
     display: flex;
-    gap: 5px;
+    gap: $base-padding;
+    margin-top: $base-padding * 1.5;
 }
 
 .employee-form__manager-checkbox {
     margin: 0;
 }
 
-.employee-form__manager-text {
-    font-size: smaller;
+.employee-form__manager-checkbox-label {
+    user-select: none;
 }
 
 .employee-form__buttons-container {
     display: flex;
-    gap: 10px;
+    gap: $base-padding;
     justify-content: flex-end;
 }
 
 .employee-form__save-button {
-    border: 1px solid lightgray;
-    padding: 6px;
-    background-color: white;
+    padding: 0;
+    border: none;
+    border-radius: 2px;
+    width: $button-width;
+    height: $button-height;
+    color: var(--on-primary-front);
+    background-color: var(--primary-front);
+    font: $base-font;
+    cursor: pointer;
+    transition: 0.15s;
 }
 
 .employee-form__save-button:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--primary-front-hover);
+}
+
+.employee-form__save-button:disabled {
+    background-color: var(--primary-front-disabled);
+    cursor: default;
 }
 
 .employee-form__cancel-button {
-    border: 1px solid lightgray;
-    padding: 6px;
-    background-color: white;
+    padding: 0;
+    border: none;
+    border-radius: 2px;
+    width: $button-width;
+    height: $button-height;
+    color: var(--on-primary-front);
+    background-color: var(--primary-front);
+    font: $base-font;
+    cursor: pointer;
+    transition: 0.15s;
 }
 
 .employee-form__cancel-button:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--primary-front-hover);
 }

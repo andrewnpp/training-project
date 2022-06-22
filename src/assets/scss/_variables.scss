@@ -1,0 +1,28 @@
+:root {
+    --primary-back: #B7E2FE;
+    --surface: #FEFEFE;
+    --background-border: #DFDFDF;
+    --primary-front: #2177B7;
+    --primary-front-hover: #4aa4e9;
+    --primary-front-disabled: #a2c3dd;
+    --on-primary-front: #FEFEFE;
+    --on-surface-middle: #5E5E5E;
+    --tool-border: #CBCBCB;
+    --selector-enable: #939393;
+    --input: #FEFEFE;
+    --on-surface-high: #333333;
+    --on-surface-low: #8F8F8F;
+}
+
+$base-padding: 8px;
+$font-family: "PT Sans", Avenir, Helvetica, Arial, sans-serif;
+$base-font: 400 16px/18px $font-family;
+$bigger-bold-font: 700 20px/24px $font-family;
+$smaller-normal-font: 400 14px/16px $font-family;
+$list-item-height: 96px;
+$button-width: 105px;
+$button-height: 32px;
+$text-input-width: 132px;
+$input-clear-button-size: 10px;
+$input-clear-button-padding: 6px;
+$close-icon-hover-svg-filter: invert(22%) sepia(93%) saturate(7223%) hue-rotate(358deg) brightness(90%) contrast(127%);

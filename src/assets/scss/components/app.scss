@@ -1,0 +1,20 @@
+#app {
+  font: $base-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--on-surface-high);
+}
+
+.fade-modal-employee-container-enter-active,
+.fade-modal-employee-container-leave-active,
+.fade-message-dialog-container-enter-active,
+.fade-message-dialog-container-leave-active {
+    transition: opacity .5s;
+}
+
+.fade-modal-employee-container-enter,
+.fade-modal-employee-container-leave-to,
+.fade-message-dialog-container-enter,
+.fade-message-dialog-container-leave-to {
+    opacity: 0
+}

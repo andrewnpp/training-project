@@ -1,11 +1,35 @@
 .message-dialog__container {
     display: flex;
     flex-direction: column;
+    flex: 1;
     align-items: center;
-    gap: 20px;
+}
+
+.message-dialog__text {
+    display: flex;
+    flex: 1;
+    align-items: center;
 }
 
 .message-dialog__buttons {
     display: flex;
     align-items: center;
+    gap: $base-padding;
+}
+
+.message-dialog__button {
+    padding: 0;
+    border: none;
+    border-radius: 2px;
+    width: $button-width;
+    height: $button-height;
+    color: var(--on-primary-front);
+    background-color: var(--primary-front);
+    font: $base-font;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.message-dialog__button:hover {
+    background-color: var(--primary-front-hover);
 }

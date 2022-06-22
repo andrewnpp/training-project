@@ -7,11 +7,13 @@
             <span
                 class="modal-window__title-text"
             >{{ titleText }}</span>
-            <button
+            <img
+                src="./assets/images/close-icon.svg"
+                alt="CloseIcon"
                 class="modal-window__close-button"
                 v-if="!hideCloseButton"
                 @click="onClickClose"
-            >&times;</button>
+            >
         </div>
         <slot></slot>
     </div>

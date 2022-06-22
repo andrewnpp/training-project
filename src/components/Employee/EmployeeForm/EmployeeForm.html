@@ -1,27 +1,33 @@
 <div class="employee-form__container">
-    <div class="employee-form__full-name-container">
-        <span class="employee-form__full-name-text">ФИО:</span>
-        <input
-            class="employee-form__full-name-input"
-            type="text"
-            v-model="fullName"
-        >
-    </div>
-    <div class="employee-form__position-container">
-        <span class="employee-form__position-text">Должность:</span>
-        <input
-            class="employee-form__position-input"
-            type="text"
-            v-model="position"
-        >
-    </div>
-    <div class="employee-form__manager-container">
-        <input
-            class="employee-form__manager-checkbox"
-            type="checkbox"
-            v-model="isManager"
-        >
-        <span class="employee-form__manager-text">руководитель</span>
+    <div class="employee-form__form-container">
+        <div class="employee-form__full-name-container">
+            <span class="employee-form__full-name-text">ФИО:</span>
+            <input
+                class="employee-form__full-name-input"
+                type="text"
+                v-model="fullName"
+            >
+        </div>
+        <div class="employee-form__position-container">
+            <span class="employee-form__position-text">Должность:</span>
+            <input
+                class="employee-form__position-input"
+                type="text"
+                v-model="position"
+            >
+        </div>
+        <div class="employee-form__manager-container">
+            <input
+                class="employee-form__manager-checkbox"
+                type="checkbox"
+                v-model="isManager"
+                id="employee-form-manager-checkbox"
+            >
+            <label
+                class="employee-form__manager-checkbox-label"
+                for="employee-form-manager-checkbox"
+            >руководитель</label>
+        </div>
     </div>
     <div class="employee-form__buttons-container">
         <button

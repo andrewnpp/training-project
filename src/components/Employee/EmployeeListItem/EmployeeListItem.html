@@ -1,22 +1,27 @@
 <li class="employee-list-item__container">
+    <img
+        v-if="employee.isManager"
+        src="./assets/images/manager-mark.svg"
+        alt="Manager"
+        class="employee-list-item__manager-mark"
+    >
+    <img src="./assets/images/avatar.svg" alt="Avatar" class="employee-list-item__avatar">
     <div class="employee-list-item__employee-profile">
-        <div class="employee-list-item__avatar"></div>
         <div class="employee-list-item__employee-info">
             <span class="employee-list-item__employee-full-name">{{ employee.fullName }}</span>
             <span class="employee-list-item__employee-position">
                 {{ employee.position }}
-                <span v-if="employee.isManager"> (Р)</span>
             </span>
         </div>
-    </div>
-    <div class="employee-list-item__text-buttons">
-        <span
-            class="employee-list-item__text-button"
-            @click="onClickEditButton(employee)"
-        >Редактировать</span>
-        <span
-            class="employee-list-item__text-button"
-            @click="onClickDeleteButton(employee)"
-        >Удалить</span>
+        <div class="employee-list-item__text-buttons">
+            <span
+                class="employee-list-item__text-button"
+                @click="onClickEditButton(employee)"
+            >Редактировать</span>
+            <span
+                class="employee-list-item__text-button"
+                @click="onClickDeleteButton(employee)"
+            >Удалить</span>
+        </div>
     </div>
 </li>

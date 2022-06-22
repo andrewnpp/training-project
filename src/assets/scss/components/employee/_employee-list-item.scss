@@ -1,43 +1,59 @@
 .employee-list-item__container {
+    position: relative;
     display: flex;
-    justify-content: space-between;
-    border: 1px solid lightgray;
-    padding: 7px;
+    gap: $base-padding * 1.5;
+    padding: $base-padding;
+    height: $list-item-height;
+    border: 1px solid var(--background-border);
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-color: var(--primary-back);
 }
 
 .employee-list-item__employee-info {
     display: flex;
     flex-direction: column;
+    gap: $base-padding;
 }
 
 .employee-list-item__employee-full-name {
-    font-weight: 600;
-}
-
-.employee-list-item__employee-position {
-    font-size: smaller;
-    margin-top: 5px;
+    font: $bigger-bold-font;
 }
 
 .employee-list-item__text-button {
-    font-size: smaller;
-    color: #2177B7;
+    color: var(--primary-front);
     cursor: pointer;
-    align-self: flex-end;
+    transition: 0.15s;
+}
+
+.employee-list-item__text-button:hover {
+    color: var(--primary-front-hover);
+}
+
+.employee-list-item__manager-mark {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: $base-padding / 2;
+    left: $base-padding / 2;
 }
 
 .employee-list-item__avatar {
     width: 80px;
     height: 80px;
-    border: 1px solid lightgray;
+    border: 1px solid var(--background-border);
+    box-sizing: border-box;
 }
 
 .employee-list-item__employee-profile {
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    gap: $base-padding * 1.5;
+    flex: 1;
 }
 
 .employee-list-item__text-buttons {
     display: flex;
-    gap: 5px;
+    justify-content: flex-end;
+    gap: $base-padding;
 }
