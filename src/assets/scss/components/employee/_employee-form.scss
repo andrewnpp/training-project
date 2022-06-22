@@ -9,53 +9,59 @@
     display: flex;
     flex-direction: column;
     flex: 1;
+    gap: $base-padding;
 }
 
 .employee-form__full-name-container {
     display: flex;
+    justify-content: space-between;
 }
 
 .employee-form__full-name-text {
     align-self: center;
-    width: $text-input-width;
 }
 
 .employee-form__full-name-input {
+    width: $input-form-width;
+    height: $input-height;
     border: 1px solid var(--tool-border);
     border-radius: 1px;
     box-sizing: border-box;
     background-color: var(--input);
-    font: $smaller-normal-font;
-    flex: 1;
+    font: $label2-font;
 }
 
 .employee-form__position-container {
-    margin-top: $base-padding;
     display: flex;
+    justify-content: space-between;
 }
 
 .employee-form__position-text {
     align-self: center;
-    width: $text-input-width;
 }
 
 .employee-form__position-input {
+    width: $input-form-width;
+    height: $input-height;
     border: 1px solid var(--tool-border);
     border-radius: 1px;
     box-sizing: border-box;
     background-color: var(--input);
-    font: $smaller-normal-font;
-    flex: 1;
+    font: $label2-font;
 }
 
 .employee-form__manager-container {
+    height: $input-height;
     display: flex;
     gap: $base-padding;
-    margin-top: $base-padding * 1.5;
+    align-items: center;
 }
 
 .employee-form__manager-checkbox {
+    width: $checkbox-size;
+    height: $checkbox-size;
     margin: 0;
+    cursor: pointer;
 }
 
 .employee-form__manager-checkbox-label {
@@ -76,7 +82,7 @@
     height: $button-height;
     color: var(--on-primary-front);
     background-color: var(--primary-front);
-    font: $base-font;
+    font: $label-font;
     cursor: pointer;
     transition: 0.15s;
 }
@@ -98,7 +104,7 @@
     height: $button-height;
     color: var(--on-primary-front);
     background-color: var(--primary-front);
-    font: $base-font;
+    font: $label-font;
     cursor: pointer;
     transition: 0.15s;
 }

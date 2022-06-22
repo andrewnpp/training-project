@@ -74,6 +74,7 @@
   font: 700 20px/24px "PT Sans", Avenir, Helvetica, Arial, sans-serif; }
 
 .modal-window__close-button {
+  margin-top: 4px;
   width: 16px;
   height: 16px;
   cursor: pointer;
@@ -173,21 +174,22 @@
 .employee-filter__container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
   border: 1px solid var(--background-border);
   box-sizing: border-box;
   padding: 8px; }
 
 .employee-filter__filter-input-container {
+  height: 24px;
   position: relative;
   display: flex; }
 
 .employee-filter__clear-button {
   position: absolute;
-  top: 6px;
-  right: 6px;
-  width: 10px;
-  height: 10px;
+  top: 4px;
+  right: 4px;
+  width: 16px;
+  height: 16px;
   cursor: pointer;
   transition: filter 0.15s; }
 
@@ -195,9 +197,11 @@
   filter: invert(22%) sepia(93%) saturate(7223%) hue-rotate(358deg) brightness(90%) contrast(127%); }
 
 .employee-filter__filter-option-container {
+  height: 24px;
   display: flex;
   gap: 8px;
-  justify-content: flex-start; }
+  justify-content: flex-start;
+  align-items: center; }
 
 .employee-filter__add-button {
   padding: 0;
@@ -216,16 +220,22 @@
   background-color: var(--primary-front-hover); }
 
 .employee-filter__checkbox {
-  margin: 0; }
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  cursor: pointer; }
 
 .employee-filter__input {
+  width: 234px;
+  height: 24px;
   border: 1px solid var(--tool-border);
   border-radius: 1px;
   box-sizing: border-box;
   background-color: var(--input);
   font: 400 14px/16px "PT Sans", Avenir, Helvetica, Arial, sans-serif;
   flex: 1;
-  padding-right: 22px; }
+  padding-left: 8px;
+  padding-right: 24px; }
 
 .employee-filter__checkbox-label {
   user-select: none; }
@@ -239,46 +249,52 @@
 .employee-form__form-container {
   display: flex;
   flex-direction: column;
-  flex: 1; }
+  flex: 1;
+  gap: 8px; }
 
 .employee-form__full-name-container {
-  display: flex; }
+  display: flex;
+  justify-content: space-between; }
 
 .employee-form__full-name-text {
-  align-self: center;
-  width: 132px; }
+  align-self: center; }
 
 .employee-form__full-name-input {
+  width: 252.63px;
+  height: 24px;
   border: 1px solid var(--tool-border);
   border-radius: 1px;
   box-sizing: border-box;
   background-color: var(--input);
-  font: 400 14px/16px "PT Sans", Avenir, Helvetica, Arial, sans-serif;
-  flex: 1; }
+  font: 400 14px/16px "PT Sans", Avenir, Helvetica, Arial, sans-serif; }
 
 .employee-form__position-container {
-  margin-top: 8px;
-  display: flex; }
+  display: flex;
+  justify-content: space-between; }
 
 .employee-form__position-text {
-  align-self: center;
-  width: 132px; }
+  align-self: center; }
 
 .employee-form__position-input {
+  width: 252.63px;
+  height: 24px;
   border: 1px solid var(--tool-border);
   border-radius: 1px;
   box-sizing: border-box;
   background-color: var(--input);
-  font: 400 14px/16px "PT Sans", Avenir, Helvetica, Arial, sans-serif;
-  flex: 1; }
+  font: 400 14px/16px "PT Sans", Avenir, Helvetica, Arial, sans-serif; }
 
 .employee-form__manager-container {
+  height: 24px;
   display: flex;
   gap: 8px;
-  margin-top: 12px; }
+  align-items: center; }
 
 .employee-form__manager-checkbox {
-  margin: 0; }
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  cursor: pointer; }
 
 .employee-form__manager-checkbox-label {
   user-select: none; }
@@ -339,7 +355,15 @@
   gap: 8px; }
 
 .employee-list-item__employee-full-name {
-  font: 700 20px/24px "PT Sans", Avenir, Helvetica, Arial, sans-serif; }
+  font: 700 20px/24px "PT Sans", Avenir, Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.employee-list-item__employee-position {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
 
 .employee-list-item__text-button {
   color: var(--primary-front);
@@ -366,7 +390,8 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  flex: 1; }
+  flex: 1;
+  min-width: 0; }
 
 .employee-list-item__text-buttons {
   display: flex;
@@ -395,13 +420,15 @@
 .employee-overview__container {
   display: flex;
   gap: 8px;
-  max-height: 95vh; }
+  max-height: 95vh;
+  justify-content: center; }
 
 .employee-overview__filter {
   min-width: 250px; }
 
 .employee-overview__list {
   min-width: 350px;
+  max-width: 500px;
   flex: 1; }
 
 #app {

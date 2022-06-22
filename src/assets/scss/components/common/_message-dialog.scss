@@ -9,6 +9,9 @@
     display: flex;
     flex: 1;
     align-items: center;
+    // overflow: hidden;
+    // white-space: nowrap;
+    // text-overflow: ellipsis;
 }
 
 .message-dialog__buttons {
@@ -25,7 +28,7 @@
     height: $button-height;
     color: var(--on-primary-front);
     background-color: var(--primary-front);
-    font: $base-font;
+    font: $label-font;
     cursor: pointer;
     transition: 0.15s;
 }

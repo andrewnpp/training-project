@@ -1,21 +1,22 @@
 .employee-filter__container {
     display: flex;
     flex-direction: column;
-    gap: $base-padding * 2.5;
+    gap: $base-padding * 2;
     border: 1px solid var(--background-border);
     box-sizing: border-box;
     padding: $base-padding;
 }
 
 .employee-filter__filter-input-container {
+    height: $input-height;
     position: relative;
     display: flex;
 }
 
 .employee-filter__clear-button {
     position: absolute;
-    top: $input-clear-button-padding;
-    right: $input-clear-button-padding;
+    top: $base-padding / 2;
+    right: $base-padding / 2;
     width: $input-clear-button-size;
     height: $input-clear-button-size;
     cursor: pointer;
@@ -27,9 +28,11 @@
 }
 
 .employee-filter__filter-option-container {
+    height: $input-height;
     display: flex;
     gap: $base-padding;
     justify-content: flex-start;
+    align-items: center;
 }
 
 .employee-filter__add-button {
@@ -41,7 +44,7 @@
     height: $button-height;
     color: var(--on-primary-front);
     background-color: var(--primary-front);
-    font: $base-font;
+    font: $label-font;
     cursor: pointer;
     transition: 0.15s;
 }
@@ -51,17 +54,23 @@
 }
 
 .employee-filter__checkbox {
+    width: $checkbox-size;
+    height: $checkbox-size;
     margin: 0;
+    cursor: pointer;
 }
 
 .employee-filter__input {
+    width: $input-filter-width;
+    height: $input-height;
     border: 1px solid var(--tool-border);
     border-radius: 1px;
     box-sizing: border-box;
     background-color: var(--input);
-    font: $smaller-normal-font;
+    font: $label2-font;
     flex: 1;
-    padding-right: $input-clear-button-size + $input-clear-button-padding * 2;
+    padding-left: $base-padding;
+    padding-right: $base-padding * 3;
 }
 
 .employee-filter__checkbox-label {

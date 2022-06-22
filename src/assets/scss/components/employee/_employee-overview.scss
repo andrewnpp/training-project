@@ -2,6 +2,7 @@
     display: flex;
     gap: $base-padding;
     max-height: 95vh;
+    justify-content: center;
 }
 
 .employee-overview__filter {
@@ -10,5 +11,6 @@
 
 .employee-overview__list {
     min-width: $list-section-min-width;
+    max-width: $list-section-max-width;
     flex: 1;
 }

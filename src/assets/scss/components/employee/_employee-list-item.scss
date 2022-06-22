@@ -17,7 +17,16 @@
 }
 
 .employee-list-item__employee-full-name {
-    font: $bigger-bold-font;
+    font: $title-font;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.employee-list-item__employee-position {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .employee-list-item__text-button {
@@ -50,6 +59,7 @@
     flex-direction: column;
     gap: $base-padding * 1.5;
     flex: 1;
+    min-width: 0;
 }
 
 .employee-list-item__text-buttons {

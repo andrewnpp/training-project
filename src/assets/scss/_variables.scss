@@ -16,15 +16,13 @@
 
 $base-padding: 8px;
 $font-family: "PT Sans", Avenir, Helvetica, Arial, sans-serif;
-$base-font: 400 16px/18px $font-family;
-$bigger-bold-font: 700 20px/24px $font-family;
-$smaller-normal-font: 400 14px/16px $font-family;
+$label-font: 400 16px/18px $font-family;
+$title-font: 700 20px/24px $font-family;
+$label2-font: 400 14px/16px $font-family;
 $list-item-height: 96px;
 $button-width: 105px;
 $button-height: 32px;
-$text-input-width: 132px;
-$input-clear-button-size: 10px;
-$input-clear-button-padding: 6px;
+$input-clear-button-size: 16px;
 $close-icon-hover-svg-filter: invert(22%) sepia(93%) saturate(7223%) hue-rotate(358deg) brightness(90%) contrast(127%);
 $modal-window-close-button-size: 16px;
 $modal-window-width: 400px;
@@ -33,3 +31,8 @@ $manager-mark-size: 25px;
 $avatar-size: 80px;
 $filter-section-min-width: 250px;
 $list-section-min-width: 350px;
+$list-section-max-width: 500px;
+$checkbox-size: 16px;
+$input-height: 24px;
+$input-filter-width: 234px;
+$input-form-width: 252.63px;

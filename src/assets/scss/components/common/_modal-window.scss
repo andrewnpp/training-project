@@ -27,10 +27,11 @@
 }
 
 .modal-window__title-text {
-    font: $bigger-bold-font;
+    font: $title-font;
 }
 
 .modal-window__close-button {
+    margin-top: $base-padding / 2;
     width: $modal-window-close-button-size;
     height: $modal-window-close-button-size;
     cursor: pointer;
