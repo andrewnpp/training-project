@@ -23,7 +23,12 @@
 .message-dialog__text {
   display: flex;
   flex: 1;
-  align-items: center; }
+  align-items: center;
+  max-width: 100%; }
+  .message-dialog__text span {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
 
 .message-dialog__buttons {
   display: flex;
