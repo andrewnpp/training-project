@@ -112,3 +112,8 @@
 .employee-form__cancel-button:hover {
     background-color: var(--primary-front-hover);
 }
+
+.employee-form__cancel-button:disabled {
+    background-color: var(--primary-front-disabled);
+    cursor: default;
+}

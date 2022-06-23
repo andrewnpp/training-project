@@ -5,6 +5,7 @@ import { getModule } from "vuex-module-decorators";
 
 import { ModalEmployeeEditor } from "./ModalEmployeeEditor";
 import { ModalEmployeeEditorModule } from "./ModalEmployeeEditorModule";
+import { AppModule } from "../../../AppModule";
 
 @Component({
     template: `
@@ -18,6 +19,7 @@ import { ModalEmployeeEditorModule } from "./ModalEmployeeEditorModule";
 })
 export class ModalEmployeeEditorContainer extends Vue {
     private modalEmployeeEditorModule: ModalEmployeeEditorModule;
+    private appModule: AppModule;
 
     public get isVisible(): boolean {
         return this.modalEmployeeEditorModule.getIsVisible;
@@ -25,6 +27,10 @@ export class ModalEmployeeEditorContainer extends Vue {
 
     public get employee(): IEmployee {
         return this.modalEmployeeEditorModule.getEmployee;
+    }
+
+    public get loading(): boolean {
+        return this.appModule.getLoading;
     }
 
     public onSave(employee: IEmployee): void {
@@ -35,11 +41,14 @@ export class ModalEmployeeEditorContainer extends Vue {
     }
 
     public onClose(): void {
-        this.modalEmployeeEditorModule.getOnClose?.();
-        this.modalEmployeeEditorModule.hide();
+        if (!this.loading) {
+            this.modalEmployeeEditorModule.getOnClose?.();
+            this.modalEmployeeEditorModule.hide();
+        }
     }
 
     created() {
         this.modalEmployeeEditorModule = getModule(ModalEmployeeEditorModule, this.$store);
+        this.appModule = getModule(AppModule, this.$store);
     }
 }

@@ -45,6 +45,10 @@
 .message-dialog__button:hover {
   background-color: var(--primary-front-hover); }
 
+.message-dialog__button:disabled {
+  background-color: var(--primary-front-disabled);
+  cursor: default; }
+
 .modal-window__container {
   top: 0;
   bottom: 0;
@@ -219,6 +223,10 @@
 .employee-filter__add-button:hover {
   background-color: var(--primary-front-hover); }
 
+.employee-filter__add-button:disabled {
+  background-color: var(--primary-front-disabled);
+  cursor: default; }
+
 .employee-filter__checkbox {
   width: 16px;
   height: 16px;
@@ -338,6 +346,10 @@
 .employee-form__cancel-button:hover {
   background-color: var(--primary-front-hover); }
 
+.employee-form__cancel-button:disabled {
+  background-color: var(--primary-front-disabled);
+  cursor: default; }
+
 .employee-list-item__container {
   position: relative;
   display: flex;
@@ -366,12 +378,20 @@
   text-overflow: ellipsis; }
 
 .employee-list-item__text-button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  font: 400 16px/18px "PT Sans", Avenir, Helvetica, Arial, sans-serif;
   color: var(--primary-front);
   cursor: pointer;
   transition: 0.15s; }
 
 .employee-list-item__text-button:hover {
   color: var(--primary-front-hover); }
+
+.employee-list-item__text-button:disabled {
+  color: var(--primary-front-disabled);
+  cursor: default; }
 
 .employee-list-item__manager-mark {
   position: absolute;

@@ -6,16 +6,19 @@
         <div class="message-dialog__buttons">
             <button
                 class="message-dialog__button"
+                :disabled="isDisabled"
                 @click="onConfirm"
             >{{ confirmTitleText }}</button>
             <button
                 v-if="dialogType === 'yesNo' || dialogType === 'yesNoCancel'"
                 class="message-dialog__button"
+                :disabled="isDisabled"
                 @click="onDeny"
             >Нет</button>
             <button
                 v-if="dialogType === 'yesNoCancel'"
                 class="message-dialog__button"
+                :disabled="isDisabled"
                 @click="onCancel"
             >Отмена</button>
         </div>

@@ -32,11 +32,12 @@
     <div class="employee-form__buttons-container">
         <button
             class="employee-form__save-button"
-            :disabled="saveButtonDisabled"
+            :disabled="saveButtonDisabled || loading"
             @click="onSaveEditing"
         >Сохранить</button>
         <button
             class="employee-form__cancel-button"
+            :disabled="loading"
             @click="onCancelEditing"
         >Отмена</button>
     </div>

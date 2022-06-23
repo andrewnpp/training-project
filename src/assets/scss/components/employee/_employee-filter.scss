@@ -53,6 +53,11 @@
     background-color: var(--primary-front-hover);
 }
 
+.employee-filter__add-button:disabled {
+    background-color: var(--primary-front-disabled);
+    cursor: default;
+}
+
 .employee-filter__checkbox {
     width: $checkbox-size;
     height: $checkbox-size;

@@ -16,6 +16,8 @@ export class MessageDialog extends Vue {
     public messageText: string;
     @Prop()
     public dialogType: IMessageDialogType;
+    @Prop({ default: false })
+    public isDisabled: boolean;
     @Prop()
     public confirmTitle: string;
     @Prop()

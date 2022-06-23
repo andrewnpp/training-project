@@ -21,6 +21,10 @@ export class EmployeeListItem extends Vue {
     private modalEmployeeEditorModule: ModalEmployeeEditorModule;
     private messageDialogModule: MessageDialogModule;
 
+    public get loading(): boolean {
+        return this.appModule.getLoading;
+    }
+
     public onClickEditButton(employee: IEmployee): void {
         this.modalEmployeeEditorModule.show({ employee, onSave: this.appModule.updateServiceEmployee });
     }

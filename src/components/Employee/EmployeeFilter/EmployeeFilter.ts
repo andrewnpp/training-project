@@ -23,6 +23,10 @@ export class EmployeeFilter extends Vue {
         return this.appModule.getOnlyManagers;
     }
 
+    public get loading(): boolean {
+        return this.appModule.getLoading;
+    }
+
     public onChangeInputTextHandler(event: Event): void {
         this.appModule.setInputText((<HTMLInputElement>event.target).value);
     }

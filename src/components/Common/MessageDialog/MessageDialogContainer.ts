@@ -14,6 +14,7 @@ import { AppModule } from "../../../AppModule";
         :titleText="titleText"
         :messageText="messageText"
         :dialogType="dialogType"
+        :isDisabled="loading"
         :confirmTitle="confirmTitle"
         :onConfirm="onConfirm"
         :onDeny="onDeny"
@@ -61,31 +62,41 @@ export class MessageDialogContainer extends Vue {
         return this.appModule.getError;
     }
 
+    public get loading(): boolean {
+        return this.appModule.getLoading;
+    }
+
     public onConfirm(): void {
-        if (this.error) {
-            this.messageDialogModule.hide();
-            this.appModule.setError(false);
-        } else {
-            this.messageDialogModule
-                .getOnConfirm?.()
-                .then(() => this.messageDialogModule.hide())
-                .catch(err => console.log(err));
+        if (!this.loading) {
+            if (this.error) {
+                this.messageDialogModule.hide();
+                this.appModule.setError(false);
+            } else {
+                this.messageDialogModule
+                    .getOnConfirm?.()
+                    .then(() => this.messageDialogModule.hide())
+                    .catch(err => console.log(err));
+            }
         }
     }
 
     public onDeny(): void {
-        this.messageDialogModule.getOnDeny?.();
-        this.messageDialogModule.hide();
-        if (this.error) {
-            this.appModule.setError(false);
+        if (!this.loading) {
+            this.messageDialogModule.getOnDeny?.();
+            this.messageDialogModule.hide();
+            if (this.error) {
+                this.appModule.setError(false);
+            }
         }
     }
 
     public onCancel(): void {
-        this.messageDialogModule.getOnCancel?.();
-        this.messageDialogModule.hide();
-        if (this.error) {
-            this.appModule.setError(false);
+        if (!this.loading) {
+            this.messageDialogModule.getOnCancel?.();
+            this.messageDialogModule.hide();
+            if (this.error) {
+                this.appModule.setError(false);
+            }
         }
     }
 

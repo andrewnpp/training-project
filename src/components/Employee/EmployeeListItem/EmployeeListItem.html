@@ -14,14 +14,16 @@
             </span>
         </div>
         <div class="employee-list-item__text-buttons">
-            <span
+            <button
                 class="employee-list-item__text-button"
+                :disabled="loading"
                 @click="onClickEditButton(employee)"
-            >Редактировать</span>
-            <span
+            >Редактировать</button>
+            <button
                 class="employee-list-item__text-button"
+                :disabled="loading"
                 @click="onClickDeleteButton(employee)"
-            >Удалить</span>
+            >Удалить</button>
         </div>
     </div>
 </li>

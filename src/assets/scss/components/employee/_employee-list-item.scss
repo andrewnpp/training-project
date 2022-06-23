@@ -30,6 +30,10 @@
 }
 
 .employee-list-item__text-button {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    font: $label-font;
     color: var(--primary-front);
     cursor: pointer;
     transition: 0.15s;
@@ -37,6 +41,11 @@
 
 .employee-list-item__text-button:hover {
     color: var(--primary-front-hover);
+}
+
+.employee-list-item__text-button:disabled {
+    color: var(--primary-front-disabled);
+    cursor: default;
 }
 
 .employee-list-item__manager-mark {

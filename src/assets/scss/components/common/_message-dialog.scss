@@ -9,9 +9,6 @@
     display: flex;
     flex: 1;
     align-items: center;
-    // overflow: hidden;
-    // white-space: nowrap;
-    // text-overflow: ellipsis;
 }
 
 .message-dialog__buttons {
@@ -35,4 +32,9 @@
 
 .message-dialog__button:hover {
     background-color: var(--primary-front-hover);
+}
+
+.message-dialog__button:disabled {
+    background-color: var(--primary-front-disabled);
+    cursor: default;
 }
